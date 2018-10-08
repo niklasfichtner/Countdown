@@ -1,0 +1,31 @@
+{
+  "name": "projekt-webprog",
+  "version": "1.0.0",
+  "description": "Webanwendung zu Verwaltung von Mitarbeiter",
+  "main": "index.js",
+  "dependencies": {
+    "parcel-bundler": "^1.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niklasfichtner/Countdown.git"
+  },
+  "keywords": [
+    "Browser",
+    "App",
+    "Employee",
+    "Company",
+    "Mobile",
+    "First"
+  ],
+  "author": "Niklas Fichtner, Niklas Baeuerle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niklasfichtner/Countdown/issues"
+  },
+  "homepage": "https://github.com/niklasfichtner/Countdown#readme"
+}
