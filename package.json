@@ -3,16 +3,21 @@
   "version": "1.0.0",
   "description": "Webanwendung zu Verwaltung von Mitarbeiter",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "parcel-bundler": "^1.10.2"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "scripts": {
+    "clean": "node scripts/clean.js",
+    "build": "npm run clean && parcel build src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+    "watch": "npm run clean && parcel watch src/*.html --public-url . --detailed-report --experimental-scope-hoisting",
+    "start": "parcel src/index.html --open"
+  },
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/niklasfichtner/Countdown.git"
+    "url": "git+https://github.com/niklasfichtner/Firmbook.git"
   },
   "keywords": [
     "Browser",
@@ -25,7 +30,7 @@
   "author": "Niklas Fichtner, Niklas Baeuerle",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/niklasfichtner/Countdown/issues"
+    "url": "https://github.com/niklasfichtner/Firmbook/issues"
   },
-  "homepage": "https://github.com/niklasfichtner/Countdown#readme"
+  "homepage": "https://github.com/niklasfichtner/Firmbook#readme"
 }
