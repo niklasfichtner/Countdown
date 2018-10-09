@@ -4,23 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico">
-    <title>Firmbook</title>
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <title>FirmBook</title>
+
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet">
+
+    <!-- Bootstrap-JavaScript
+    ================================================== -->
+    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="../node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
+
   </head>
 
   <body>
-      <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <li><a href="#">Liste</a></li>
-            <li><a href="#">Hinzufügen</a></li>
-          </div>
-      </nav>
+<nav>
+    <ul>
+        <li><a href="#">Liste</a></li>
+        <li><a href="#">Hinzufügen</a></li>
+        <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Suchen">
+        </div>
+        <button type="submit" class="btn btn-default">Los</button>
+      </form>
+    </ul>
+</nav>
 
     <div class="container">
       <div class="top">
-        <h1>Mitarbeiter</h1>
+        <h1>Mitarbeiterliste</h1>
       </div>
     </div>
 
@@ -30,37 +47,38 @@
     </div>
 
     <div> <br /> </div>
+<div class="container">
+      <div class="row">
+        <div class="col-md-4">
+            //Mitarbeiter 1
+            <div class="card">
+              <img src="person1.jpg" />
+              <a href="#"<b>Max Mustermann</b><a/><hr>
+              Telefon: <a href="#" <p>3958730</p><a/>
+              Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+        </div>
+        </div>
+        <div class="col-md-4">
+            //Mitarbeiter 2
+            <div class="card">
+              <img src="person1.jpg" />
+              <a href="#"<b>Erika Mustermann</b><a/><hr>
+              Telefon: <a href="#" <p>3949398</p><a/>
+              Email: <a href="#" <p>erikamustermann@gmx.de</p><a/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            //Mitarbeiter 3
+            <div class="card">
+              <img src="person1.jpg" />
+              <a href="#"<b>Tom Mustermann</b><a/><hr>
+              Telefon: <a href="#" <p>3030230</p><a/>
+              Email: <a href="#" <p>tommustermann@gmx.de</p><a/>
+            </div>
+        </div>
+      </div>
+</div>
 
-    //Mitarbeiter 1
-    <div class="card">
-      <img src="person1.jpg" />
-      <a href="#"<b>Max Mustermann</b><a/><hr>
-      Telefon: <a href="#" <p>3958730</p><a/>
-      Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-    </div>
-
-    //Mitarbeiter 2
-    <div class="card">
-      <img src="person1.jpg" />
-      <a href="#"<b>Erika Mustermann</b><a/><hr>
-      Telefon: <a href="#" <p>3949398</p><a/>
-      Email: <a href="#" <p>erikamustermann@gmx.de</p><a/>
-    </div>
-
-    //Mitarbeiter 3
-    <div class="card">
-      <img src="person1.jpg" />
-      <a href="#"<b>Tom Mustermann</b><a/><hr>
-      Telefon: <a href="#" <p>3030230</p><a/>
-      Email: <a href="#" <p>tommustermann@gmx.de</p><a/>
-    </div>
-
-
-    <!-- Bootstrap-JavaScript
-    ================================================== -->
-    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
 
   </body>
 </html>
