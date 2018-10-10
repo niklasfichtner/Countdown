@@ -7,10 +7,11 @@ html, body {
 .navi {
      display: flex;
 }
-.navi ul li {list-style: none; display: inline;}
+.navi ul {margin-top: 10px;}
+.navi ul li {list-style: none; display: inline; margin-right: 20px;}
 .navi a {  text-decoration: none; font-size: 1.2em;}
-.navi #border {border-right: 1px solid darkgrey;}
 .container-fluid {background:#EAEAEC;margin-bottom: 30px; border-bottom: 2px solid darkgrey;}
+
 
 
 
@@ -39,5 +40,5 @@ html, body {
 }
 
 /* Footer*/
-.footer img { max-width: 10%;display: block; margin-left: auto; margin-right: auto }
+.footer img { max-width: 5%;display: block; margin-left: auto; margin-right: auto }
 .footer {background:#EAEAEC; margin-top: 100px;}
