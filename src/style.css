@@ -2,10 +2,22 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.top h1 {font-size: 2em; border-bottom: 1px solid grey;}
+/* Navigation*/
+.navi {
+     display: flex;
+}
+.navi a { padding: 20px 10px 20px 10px; text-decoration: none; font-size: 1.2em;}
+.container-fluid {background:#EAEAEC;margin-bottom: 30px; border-bottom: 2px solid darkgrey;}
+
+
+
+/* Mitarbeiter-Boxen*/
 .card {
     display: inline-block;
     text-align: center;
     margin-top: 1em;
+
 
     border: 1px solid darkgrey;
     border-radius: 0.5em;
@@ -23,3 +35,7 @@ html, body {
 .right {
   text-align: right;
 }
+
+/* Footer*/
+.footer img { max-width: 10%;display: block; margin-left: auto; margin-right: auto }
+.footer {background:#EAEAEC; margin-top: 100px;}
