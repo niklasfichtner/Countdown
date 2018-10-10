@@ -7,7 +7,9 @@ html, body {
 .navi {
      display: flex;
 }
-.navi a { padding: 20px 10px 20px 10px; text-decoration: none; font-size: 1.2em;}
+.navi ul li {list-style: none; display: inline;}
+.navi a {  text-decoration: none; font-size: 1.2em;}
+.navi #border {border-right: 1px solid darkgrey;}
 .container-fluid {background:#EAEAEC;margin-bottom: 30px; border-bottom: 2px solid darkgrey;}
 
 
