@@ -10,6 +10,7 @@ html, body {
 .navi ul {margin-top: 10px;}
 .navi ul li {list-style: none; display: inline; margin-right: 20px;}
 .navi a {  text-decoration: none; font-size: 1.2em;}
+.navi .suche {margin-right: 0px !important;}
 .container-fluid {background:#EAEAEC;margin-bottom: 30px; border-bottom: 2px solid darkgrey;}
 
 
@@ -41,4 +42,4 @@ html, body {
 
 /* Footer*/
 .footer img { max-width: 5%;display: block; margin-left: auto; margin-right: auto }
-.footer {background:#EAEAEC; margin-top: 100px;}
+.footer {background:#EAEAEC; margin-top: 100px;padding-bottom: 0px;}
