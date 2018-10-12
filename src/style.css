@@ -1,17 +1,31 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 .top h1 {font-size: 2em; border-bottom: 1px solid grey;}
+
 /* Navigation*/
-.navi {
-     display: flex;
+nav { width: 100%; background:#EAEAEC; margin-bottom: 30px;}
+ul {width: 80%; margin: 0 auto; padding: 0; }
+ul li {list-style: none; display: inline-block; padding: 20px;}
+ul li:hover {background:#808080; text-decoration: none; cursor:auto;}
+ul li a {text-decoration: none; color: black;}
+ul li a:hover {text-decoration: none; color: black;}
+li.suche:hover {background: #EAEAEC;}
+.toggle {width:100%; padding: 10px 20px; background:#808080; text-align:right; box-sizing: border-box; font-size: 20px; display: none;}
+
+@media (max-width:768px)  {
+.toggle {display: block; cursor: auto;}
+ul {width: 100%; display: none;}
+ul li {display:block; text-align: left;}
+.active{ display: block; }
 }
-.navi ul {margin-top: 10px;}
-.navi ul li {list-style: none; display: inline; margin-right: 20px;}
+
+/*.navi ul li {list-style: none; display: inline; margin-right: 20px;}
 .navi a {  text-decoration: none; font-size: 1.2em;}
 .suche {margin-right: 0px !important;}
-.container-fluid {background:#EAEAEC;margin-bottom: 30px; border-bottom: 2px solid darkgrey;}
+.container-fluid {background:#EAEAEC;margin-bottom: 30px; border-bottom: 2px solid darkgrey;}*/
 
 
 
@@ -42,4 +56,4 @@ html, body {
 
 /* Footer*/
 .footer img { max-width: 5%;display: block; margin-left: auto; margin-right: auto }
-.footer {background:#EAEAEC; margin-top: 100px;padding-bottom: 0px;}
+.footer {background:#EAEAEC; margin-top: 100px;margin-bottom: 0px; }

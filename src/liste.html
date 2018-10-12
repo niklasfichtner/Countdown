@@ -11,37 +11,41 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
-
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
 
   </head>
 
 <body>
 <!--Liste Mitarbeiter-->
-    <header>
-        <div class="container-fluid">
-            <div class="container">
-                <nav class="navi">
-                    <ul>
-                        <li>
-                        <a href="index.html">Über uns</a>
-                        </li>
-                        <li>
-                        <a href="liste.html">Liste</a>
-                        </li>
-                        <li>
-                        <a href="hinzufuegen.html">Hinzufügen</a>
-                        </li>
-                        <li>
-                        <input class="suche" placeholder="Suchen"/>
-                        </li>
-                        <li>
-                        <button class="suche">Los</button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+<header>
+            <nav >
+                <div class="toggle">
+                    <i class="fas fa-bars bar" aria-hidden="true"></i>
+                </div>
+                <ul>
+                    <li>
+                    <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                    <a href="liste.html">Liste</a>
+                    </li>
+                    <li>
+                    <a href="hinzufuegen.html">Hinzufügen</a>
+                    </li>
+                    <li class="suche">
+                    <input placeholder="Suchen"/><button>Los</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.bar').click(function(){
+                        $('ul').toggleClass('active')
+                    })
+                })
+            </script>
+</header>
     <main>
         <div class="container">
           <div class="top">
@@ -50,7 +54,7 @@
         </div>
     <div class="container">
         <div class="row">
-              <div class="col sm">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="ansprechpartner">
                     <div class="card">
                       <img src="person1.jpg" />
@@ -61,7 +65,7 @@
                 </div>
               </div>
 
-              <div class="col s12 m6 l3">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="ansprechpartner">
                     <div class="card">
                       <img src="person1.jpg" />
@@ -72,7 +76,40 @@
                 </div>
               </div>
 
-              <div class="col s12 m6 l3">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="ansprechpartner">
+                    <div class="card">
+                      <img src="person1.jpg" />
+                      <a href="#"<b>Max Mustermann</b><a/><hr>
+                      Telefon: <a href="#" <p>3958730</p><a/>
+                      Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="ansprechpartner">
+                    <div class="card">
+                      <img src="person1.jpg" />
+                      <a href="#"<b>Max Mustermann</b><a/><hr>
+                      Telefon: <a href="#" <p>3958730</p><a/>
+                      Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="ansprechpartner">
+                    <div class="card">
+                      <img src="person1.jpg" />
+                      <a href="#"<b>Max Mustermann</b><a/><hr>
+                      Telefon: <a href="#" <p>3958730</p><a/>
+                      Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="ansprechpartner">
                     <div class="card">
                       <img src="person1.jpg" />
