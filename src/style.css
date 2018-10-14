@@ -24,6 +24,7 @@ ul li {display:block; text-align: center;}
 
 /* Formular-Hinzufügen */
 
+form img {text-align: center; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;margin-top:20px ;max-width: 200px; background-color:#EAEAEC; border-radius: 50%;}
 form input {text-align: center; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;}
 
 
