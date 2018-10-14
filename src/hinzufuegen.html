@@ -14,6 +14,7 @@
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+
   </head>
 
 <body>
@@ -48,7 +49,25 @@
                         </script>
             </header>
             <main>
-                <h1>Mitarbeiter bearbeiten</h1>
+                <div class="container">
+                  <div class="top">
+                    <h1>Mitarbeiter hinzufügen</h1>
+                  </div>
+                </div>
+                <div class="container">
+                    <form >
+                        <p>
+                            <input type="file" placeholder="Bild" id="employeePic" name="employeePic" />
+                            <input type="text" placeholder="Name" id="employeeName" name="employeeName" />
+                            <input type="text" placeholder="Stellenbezeichnung" id="employeestatus" name="employeestatus" />
+                            <input type="text" placeholder="Telefon" id="employeePhone" name="employeePhone" />
+                            <input type="text" placeholder="E-Mail" id="employeeMail" name="employeeMail" />
+                            <input type="text" placeholder="Standort" id="employeePlace" name="employeePlace" />
+                            <input type="submit" value="Hinzufügen"/>
+                        </p>
+                    </form>
+                </div>
+
             </main>
             <footer>
                 <div class="footer">
