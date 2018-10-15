@@ -7,8 +7,7 @@ html, body {
 
 /* Navigation*/
 nav { width: 100%; background:#EAEAEC; margin-bottom: 30px; font-size: 1.1em;}
-ul {width: 80%; margin: 0 auto; padding: 0; }
-ul li {list-style: none; display: inline-block; padding: 20px;}
+ul li {list-style: none; display: inline-block; padding: 20px 0px 20px 0px;}
 ul li:hover { text-decoration: none; cursor:auto;}
 ul li a {text-decoration: none; color: black;}
 ul li a:hover {text-decoration: none; color: black;}
