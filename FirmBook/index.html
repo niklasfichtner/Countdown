@@ -1,202 +1,186 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FirmBook</title>
+<html lang="de">
+<head>
+  <title>FirmBook</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- neu -->
+  <link rel="icon" type="image/ico" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="style.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-     <link href="style.css" rel="stylesheet">
-     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/5.5.4/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/5.5.4/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.5.4/firebase-database.js"></script>
+  <script defer src="/__/firebase/5.5.4/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/5.5.4/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.5.4/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.5.4/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.5.4/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.5.4/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.5.4/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
-  </head>
-  <body>
-      <header>
-                  <nav >
-                      <div class="toggle">
-                          <i class="fas fa-bars bar" aria-hidden="true"></i>
-                      </div>
-                      <ul class="nav nav-tabs">
-                          <li class="active">
-                          <a href="#home">Home</a>
-                          </li>
-                          <li>
-                          <a href="#liste">Liste</a>
-                          </li>
-                          <li>
-                          <a href="#hinzufuegen">Hinzufügen</a>
-                          </li>
-                          <li class="suche">
-                          <input placeholder="Suchen"/><button>Los</button>
-                          </li>
-                      </ul>
-                  </nav>
-                  <script type="text/javascript">
-                      $(document).ready(function(){
-                          $('.bar').click(function(){
-                              $('ul').toggleClass('active')
-                          })
-                      })
-                  </script>
-
-      </header>
-      <div class="tab-content">
-          <div id="home" class="tab-pane fade in active">
-            <main>
-                <div class="container">
-                  <div class="top">
-                    <h1>Herzlich Willkommen</h1>
-                    <p>
-                      Das perfekte Telefonbuch</br>
-                      Suchen sie etwas bestimmtes?</br>
-                      Die Liste ermöglicht ihnen die volle Anzahl aller Mitarbeiter.</br>
-                      Sind sie neu? Dann legen Sie ihren Kontakt bei HInzufügen an.</br>
-                      Haben sich ihre Daten geändert? Wenn sie auf ihren Kontakt klicken, ist eine Änderung ermöglicht</br>
-                      Wir wünschen ihnen eine n schönen Tag
-                    </p>
-                  </div>
-                </div>
-            </main>
-            <footer>
-                <div class="footer">
-                    <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-                </div>
-            </footer>
+</head>
+<body>
+    <nav >
+        <div class="toggle">
+            <i class="fas fa-bars bar" aria-hidden="true"></i>
         </div>
-           <div id="liste" class="tab-pane fade">
-                <main>
-                    <div class="container">
-                      <div class="top">
-                        <h1>Mitarbeiterliste</h1>
-                      </div>
-                    </div>
-                <div class="container">
-                    <div class="row">
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="ansprechpartner">
-                                <div class="card">
-                                  <img src="img/person1.jpg" />
-                                  <a href="#"<b>Max Mustermann</b><a/><hr>
-                                  Telefon: <a href="#" <p>3958730</p><a/>
-                                  Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-                            </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="ansprechpartner">
-                                <div class="card">
-                                  <img src="img/person1.jpg" />
-                                  <a href="#"<b>Max Mustermann</b><a/><hr>
-                                  Telefon: <a href="#" <p>3958730</p><a/>
-                                  Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-                            </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="ansprechpartner">
-                                <div class="card">
-                                  <img src="img/person1.jpg" />
-                                  <a href="#"<b>Max Mustermann</b><a/><hr>
-                                  Telefon: <a href="#" <p>3958730</p><a/>
-                                  Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-                            </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="ansprechpartner">
-                                <div class="card">
-                                  <img src="img/person1.jpg" />
-                                  <a href="#"<b>Max Mustermann</b><a/><hr>
-                                  Telefon: <a href="#" <p>3958730</p><a/>
-                                  Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-                            </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="ansprechpartner">
-                                <div class="card">
-                                  <img src="img/person1.jpg" />
-                                  <a href="#"<b>Max Mustermann</b><a/><hr>
-                                  Telefon: <a href="#" <p>3958730</p><a/>
-                                  Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-                            </div>
-                            </div>
-                          </div>
-
-                          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="ansprechpartner">
-                                <div class="card">
-                                  <img src="img/person1.jpg" />
-                                  <a href="#"<b>Max Mustermann</b><a/><hr>
-                                  Telefon: <a href="#" <p>3958730</p><a/>
-                                  Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
-                            </div>
-                            </div>
-                          </div>
-
-                        </div>
-                    </div>
-                </main>
-                <footer>
-                    <div class="footer">
-                        <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-                    </div>
-                </footer>
-          </div>
-           <div id="hinzufuegen" class="tab-pane fade">
-            <main>
-                <div class="container">
-                  <div class="top">
-                    <h1>Mitarbeiter hinzufügen</h1>
-                  </div>
-                </div>
-                <div class="container">
-                    <form >
-                        <img src="img/plus.png"/>
-                        <p>
-                          <input type="file" placeholder="Name" id="employeeName" name="employeeName" />
-                            <input type="text" placeholder="Name" id="employeeName" name="employeeName" />
-                            <input type="text" placeholder="Stellenbezeichnung" id="employeestatus" name="employeestatus" />
-                            <input type="text" placeholder="Telefon" id="employeePhone" name="employeePhone" />
-                            <input type="text" placeholder="E-Mail" id="employeeMail" name="employeeMail" />
-                            <input type="text" placeholder="Standort" id="employeePlace" name="employeePlace" />
-                            <input type="submit" value="Hinzufügen"/>
-                        </p>
-                    </form>
-                </div>
-
-            </main>
-            <footer>
-                <div class="footer">
-                    <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-                </div>
-            </footer>
-        </div>
-</div>
-        <script>
-$(document).ready(function(){
-    $(".nav-tabs a").click(function(){
-        $(this).tab('show');
-    });
-});
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">Liste</a></li>
+    <li><a data-toggle="tab" href="#menu2">Hinzufügen</a></li>
+  </ul>
+</nav>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.bar').click(function(){
+            $('ul').toggleClass('active')
+        })
+    })
 </script>
-        </body>
-      </html>
-  </body>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <main>
+            <div class="container">
+              <div class="top">
+                <h1>Herzlich Willkommen</h1>
+                <p>
+                  Das perfekte Telefonbuch</br>
+                  Suchen sie etwas bestimmtes?</br>
+                  Die Liste ermöglicht ihnen die volle Anzahl aller Mitarbeiter.</br>
+                  Sind sie neu? Dann legen Sie ihren Kontakt bei HInzufügen an.</br>
+                  Haben sich ihre Daten geändert? Wenn sie auf ihren Kontakt klicken, ist eine Änderung ermöglicht</br>
+                  Wir wünschen ihnen eine n schönen Tag
+                </p>
+              </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
+            </div>
+        </footer>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <main>
+            <div class="container">
+              <div class="top">
+                <h1>Mitarbeiterliste</h1>
+              </div>
+            </div>
+        <div class="container">
+            <div class="row">
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="ansprechpartner">
+                        <div class="card">
+                          <img src="img/person1.jpg" />
+                          <a href="#"<b>Max Mustermann</b><a/><hr>
+                          Telefon: <a href="#" <p>3958730</p><a/>
+                          Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="ansprechpartner">
+                        <div class="card">
+                          <img src="img/person1.jpg" />
+                          <a href="#"<b>Max Mustermann</b><a/><hr>
+                          Telefon: <a href="#" <p>3958730</p><a/>
+                          Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="ansprechpartner">
+                        <div class="card">
+                          <img src="img/person1.jpg" />
+                          <a href="#"<b>Max Mustermann</b><a/><hr>
+                          Telefon: <a href="#" <p>3958730</p><a/>
+                          Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="ansprechpartner">
+                        <div class="card">
+                          <img src="img/person1.jpg" />
+                          <a href="#"<b>Max Mustermann</b><a/><hr>
+                          Telefon: <a href="#" <p>3958730</p><a/>
+                          Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="ansprechpartner">
+                        <div class="card">
+                          <img src="img/person1.jpg" />
+                          <a href="#"<b>Max Mustermann</b><a/><hr>
+                          Telefon: <a href="#" <p>3958730</p><a/>
+                          Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="ansprechpartner">
+                        <div class="card">
+                          <img src="img/person1.jpg" />
+                          <a href="#"<b>Max Mustermann</b><a/><hr>
+                          Telefon: <a href="#" <p>3958730</p><a/>
+                          Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
+                    </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer">
+                <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
+            </div>
+        </footer>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+        <main>
+            <div class="container">
+              <div class="top">
+                <h1>Mitarbeiter hinzufügen</h1>
+              </div>
+            </div>
+            <div class="container">
+                <form >
+                    <img src="img/plus.png"/>
+                    <p>
+                      <input type="file" placeholder="Name" id="employeeName" name="employeeName" />
+                        <input type="text" placeholder="Name" id="employeeName" name="employeeName" />
+                        <input type="text" placeholder="Stellenbezeichnung" id="employeestatus" name="employeestatus" />
+                        <input type="text" placeholder="Telefon" id="employeePhone" name="employeePhone" />
+                        <input type="text" placeholder="E-Mail" id="employeeMail" name="employeeMail" />
+                        <input type="text" placeholder="Standort" id="employeePlace" name="employeePlace" />
+                        <input type="submit" value="Hinzufügen"/>
+                    </p>
+                </form>
+            </div>
+
+        </main>
+        <footer>
+            <div class="footer">
+                <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
+            </div>
+        </footer>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
