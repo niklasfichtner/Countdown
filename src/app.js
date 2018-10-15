@@ -1,32 +1,25 @@
-_switchVisibleContent(content) {
-    // <header> und <main> des HTML-Grundgerüsts ermitteln
-    let app = document.querySelector("#app");
-    let header = document.querySelector("#app > header");
-    let main = document.querySelector("#app > main");
+window.addEventListener("load", () => {
+    let newButton = document.getElementById("Hinzufügen")
+    let memoList = document.querySelector("ansprechpartner");
 
-    // Zuvor angezeigte Inhalte entfernen
-    // Bei der Topbar nur die untere Zeile, im Hauptbereich alles!
-    app.className = "";
-    header.querySelectorAll(".bottom").forEach(e => e.parentNode.removeChild(e));
-    main.innerHTML = "";
+    let insertMemo = text => {
+        let liElement = document.createElement("card");
+        memoList.appendChild(liElement);
 
-    // CSS-Klasse übernehmen, um die viewspezifischen CSS-Regeln zu aktivieren
-    if (content && content.className) {
-        app.className = content.className;
-    }
+        let memoTextElement = document.createElement("p");
+        memoTextElement.textContent = text;
+        liElement.appendChild(memoTextElement);
+};
 
-    // Neue Inhalte der Topbar einfügen
-    if (content && content.topbar) {
-        content.topbar.forEach(element => {
-            element.classList.add("bottom");
-            header.appendChild(element);
-        });
-    }
+    insertMemo("Klicke auf „Hinzufügen”, um neuen Mitarbeiter anzulegen …")
 
-    // Neue Inhalte des Hauptbereichs einfügen
-    if (content && content.main) {
-        content.main.forEach(element => {
-            main.appendChild(element);
-        });
-    }
-}
+    // Event Handler für Anlage einer Notiz
+    newButton.addEventListener("hinzufuegen", () => {
+        // Memotext vom Anwender abfragen
+        let text = prompt("Geben Sie den Notiztext ein");
+        if (text === null) return;
+
+        // Neues Element in die HTML-Liste einfügen
+        insertMemo(text);
+    });
+});
