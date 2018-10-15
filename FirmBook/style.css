@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.top h1 {font-size: 2em; border-bottom: 1px solid grey;}
+
+/* Navigation*/
+nav { width: 100%; background:#EAEAEC; margin-bottom: 30px; font-size: 1.1em;}
+ul {width: 80%; margin: 0 auto; padding: 0; }
+ul li {list-style: none; display: inline-block; padding: 20px;}
+ul li:hover { text-decoration: none; cursor:auto;}
+ul li a {text-decoration: none; color: black;}
+ul li a:hover {text-decoration: none; color: black;}
+li.suche:hover {background: #EAEAEC;}
+.toggle {width:100%; padding: 10px 20px; background:#808080; text-align:right; box-sizing: border-box; font-size: 20px; display: none;}
+.nav-tabs > li > a {border-radius: 0%;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { background-color:#EAEAEC;border-bottom:2px solid #33b5e5 ; border-top: 0px solid; border-right: 0px solid; border-left: 0px solid;}
+
+
+@media (max-width:768px)  {
+.toggle {display: block; cursor: auto;}
+ul {width: 100%; display: none;}
+ul li {display:block; text-align: center;}
+.active{ display: block; }
+.nav-tabs > li {float: none !important;}
+}
+
+/* Formular-Hinzufügen */
+
+form img {text-align: center; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;margin-top:20px ;max-width: 200px; background-color:#EAEAEC; border-radius: 50%;}
+form input {text-align: center; display: block; margin-left: auto; margin-right: auto; margin-bottom: 20px;}
+
+
+
+/* Mitarbeiter-Boxen*/
+.card {
+    display: inline-block;
+    text-align: center;
+    margin-top: 1em;
+
+
+    border: 1px solid darkgrey;
+    border-radius: 0.5em;
+    background: rgba(245, 245, 245);
+    padding: 0.5em;
+
+    transition: transform 0.5s, background 0.5s;
+    transform: scale(1);
+}
+.card img {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5em;
+    border-radius: 50%;
+}
+.right {
+  text-align: right;
+}
+
+/* Footer*/
+.footer img { max-width: 80px;display: block; margin-left: auto; margin-right: auto }
+.footer {background:#EAEAEC; margin-top: 100px;margin-bottom: 0px; }
