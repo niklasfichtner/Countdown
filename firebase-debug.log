@@ -1,22 +1,25 @@
-[debug] [2018-10-15T18:29:26.616Z] ----------------------------------------------------------------------
-[debug] [2018-10-15T18:29:26.624Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\niklasfichtner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-10-15T18:29:26.624Z] CLI Version:   5.0.1
-[debug] [2018-10-15T18:29:26.624Z] Platform:      win32
-[debug] [2018-10-15T18:29:26.624Z] Node Version:  v8.12.0
-[debug] [2018-10-15T18:29:26.828Z] Time:          Mon Oct 15 2018 20:29:26 GMT+0200 (Mitteleuropäische Sommerzeit)
-[debug] [2018-10-15T18:29:26.829Z] ----------------------------------------------------------------------
+[debug] [2018-10-15T18:50:36.738Z] ----------------------------------------------------------------------
+[debug] [2018-10-15T18:50:36.738Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\niklasfichtner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-15T18:50:36.738Z] CLI Version:   5.0.1
+[debug] [2018-10-15T18:50:36.738Z] Platform:      win32
+[debug] [2018-10-15T18:50:36.738Z] Node Version:  v8.12.0
+[debug] [2018-10-15T18:50:36.738Z] Time:          Mon Oct 15 2018 20:50:36 GMT+0200 (Mitteleuropäische Sommerzeit)
+[debug] [2018-10-15T18:50:36.738Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-10-15T18:29:26.860Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-10-15T18:29:26.861Z] > authorizing via signed-in user
-[debug] [2018-10-15T18:29:26.862Z] [iam] checking project firmbook-f14da for permissions ["firebase.projects.get"]
-[debug] [2018-10-15T18:29:26.864Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firmbook-f14da:testIamPermissions  
+[debug] [2018-10-15T18:50:36.769Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-15T18:50:36.769Z] > authorizing via signed-in user
+[debug] [2018-10-15T18:50:36.769Z] [iam] checking project firmbook-f14da for permissions ["firebase.projects.get"]
+[debug] [2018-10-15T18:50:36.785Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firmbook-f14da:testIamPermissions  
 
-[debug] [2018-10-15T18:29:28.199Z] <<< HTTP RESPONSE 200
-[debug] [2018-10-15T18:29:28.201Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firmbook-f14da  
+[debug] [2018-10-15T18:50:39.066Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-15T18:50:39.066Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firmbook-f14da  
  
-[debug] [2018-10-15T18:29:29.142Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-15T18:50:40.410Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\Users\niklasfichtner\Projekt webprog'...
 [info] 
-[debug] [2018-10-15T18:29:29.149Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1059934067199/clients/_:getWebAppConfig  
+[debug] [2018-10-15T18:50:40.425Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1059934067199/clients/_:getWebAppConfig  
  
+[debug] [2018-10-15T18:50:42.317Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: FirmBook
+[info] +  hosting: Local server: http://localhost:5000
