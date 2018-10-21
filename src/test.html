@@ -108,10 +108,16 @@
                 sie auf Hinzufügen und geben sie ihre Daten ein</center>
           <div class="container">
               <div class="row">
-                  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="ansprechpartner">
-                    </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                  <div class="ansprechpartner">
+                      <div class="card">
+                        <img src="person1.jpg" />
+                        <a href="#" <b>Max Mustermann</b><a/><hr>
+                        Telefon: <a href="#" <p>3958730</p><a/>
+                        Email: <a href="#" <p>maxmustermann@gmx.de</p><a/>
                   </div>
+                  </div>
+                </div>
               </div>
           </main>
           <footer>
@@ -164,7 +170,7 @@
                       <input type="text" placeholder="Name *" id="employeeName" name="employeeName" required />
                       <input type="text" placeholder="Stellenbezeichnung" id="employeestatus" name="employeestatus" />
                       <input type="text" placeholder="Telefon *" id="employeePhone" name="employeePhone" required pattern="[0-9]{6,20}" title="Die Telefonnummer darf nur Zahlen enthalten. Beispiel: 0123456789" />
-                      <input type="text" placeholder="E-Mail *" id="employeeMail" name="employeeMail" required pattern="@" title="Das Passwort lautet z.B.: max.mustermann@gmx.de" />
+                      <input type="email" placeholder="E-Mail *" id="employeeMail" name="employeeMail" required title="Das Passwort lautet z.B.: max.mustermann@gmx.de" />
                       <input type="text" placeholder="Standort" id="employeePlace" name="employeePlace" />
                       <center> * erforderliches Feld </center></br>
                       <input type="submit" value="Hinzufügen"/>
