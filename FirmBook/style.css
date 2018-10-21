@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .top h1 {font-size: 2em; border-bottom: 1px solid grey;}
@@ -36,11 +36,11 @@ form input {text-align: center; display: block; margin-left: auto; margin-right:
 
 
 /* Mitarbeiter-Boxen*/
-.card {
+.box {
     display: inline-block;
     text-align: center;
     margin-top: 1em;
-
+    transition: box-shadow .3s;
 
     border: 1px solid darkgrey;
     border-radius: 0.5em;
@@ -50,7 +50,7 @@ form input {text-align: center; display: block; margin-left: auto; margin-right:
     transition: transform 0.5s, background 0.5s;
     transform: scale(1);
 }
-.card img {
+.box img {
     display: block;
     width: 100%;
     margin-bottom: 0.5em;
@@ -59,6 +59,9 @@ form input {text-align: center; display: block; margin-left: auto; margin-right:
 .right {
   text-align: right;
 }
+.box:hover {
+      box-shadow: 0 0 11px rgba(33,33,33,.2);
+    }
 
 /* Footer*/
 .footer img { max-width: 80px;display: block; margin-left: auto; margin-right: auto }
