@@ -139,11 +139,12 @@ firebase.initializeApp(config);
                 <form form method="post" enctype="multipart/form-data" >
                     <img src="img/plus.png"/>
                       <input type="file" id="employeePic" name="employeePic" />
-                        <input type="text" placeholder="Name" id="employeeName"  />
-                        <input type="tel" placeholder="Telefon" id="employeePhone"  />
-                        <input type="email" placeholder="E-Mail" id="employeeMail"  />
-                        <input type="text" placeholder="Stellenbezeichnung" id="employeeTitel"  />
-                        <input type="text" placeholder="Standort" id="employeeLocation"/>
+                        <input type="text" placeholder="Name *" id="employeeName" required>
+                        <input type="tel" placeholder="Telefon *" id="employeePhone" required pattern="[0-9]{6,20}" title="Die Telefonnummer darf nur Zahlen enthalten. Beispiel: 0123456789">
+                        <input type="email" placeholder="E-Mail *" id="employeeMail" required title="Das Passwort lautet z.B.: max.mustermann@gmx.de">
+                        <input type="text" placeholder="Stellenbezeichnung" id="employeeTitel">
+                        <input type="text" placeholder="Standort" id="employeeLocation">
+                        <center> * erforderliches Feld </center></br>
                 </form>
                 <button id="send" onclick="storeData()">Hinzufügen</button>
             </div>
