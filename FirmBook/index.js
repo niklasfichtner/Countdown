@@ -22,6 +22,7 @@ db.collection("employee").doc(document.getElementById("employeeName").value).set
 })
 .then(function() {
     console.log("Document successfully written!");
+    window.alert("Ihre Eingaben wurden erfolgreich versendet!")
 })
 .catch(function(error) {
     console.error("Error writing document: ", error);
