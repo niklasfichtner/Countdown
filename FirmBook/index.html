@@ -4,84 +4,32 @@
   <title>FirmBook</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- neu -->
+
   <link rel="icon" type="image/ico" href="img/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
 
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDjKamKLvqE9IAawcoxjDlRsoGI48FzBsQ",
-    authDomain: "firmbook-f14da.firebaseapp.com",
-    databaseURL: "https://firmbook-f14da.firebaseio.com",
-    projectId: "firmbook-f14da",
-    storageBucket: "firmbook-f14da.appspot.com",
-    messagingSenderId: "1059934067199"
-  };
-  firebase.initializeApp(config);
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+<script>var config = {
+  apiKey: "AIzaSyDjKamKLvqE9IAawcoxjDlRsoGI48FzBsQ",
+  authDomain: "firmbook-f14da.firebaseapp.com",
+  databaseURL: "https://firmbook-f14da.firebaseio.com",
+  projectId: "firmbook-f14da",
+  storageBucket: "firmbook-f14da.appspot.com",
+  messagingSenderId: "1059934067199"
+};
+firebase.initializeApp(config);
 </script>
-<script>
-var provider = new firebase.auth.GoogleAuthProvider();
-
-firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
-  // ...
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-});
-firebase.auth().signInWithRedirect(provider);
-
-firebase.auth().getRedirectResult().then(function(result) {
-  if (result.credential) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // ...
-  }
-  // The signed-in user info.
-  var user = result.user;
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-});
-</script>
-
-
-  <!-- update the version number as needed -->
-  <script defer src="/__/firebase/5.5.4/firebase-app.js"></script>
-  <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/5.5.4/firebase-auth.js"></script>
-  <script defer src="/__/firebase/5.5.4/firebase-database.js"></script>
-  <script defer src="/__/firebase/5.5.4/firebase-storage.js"></script>
-  <!-- initialize the SDK after all desired features are loaded -->
-  <script defer src="/__/firebase/init.js"></script>
-
-
+  <script src="index.js"></script>
 
 </head>
 <body>
-    <nav >
+    <nav>
         <div class="toggle">
             <i class="fas fa-bars bar" aria-hidden="true"></i>
         </div>
@@ -104,17 +52,15 @@ firebase.auth().getRedirectResult().then(function(result) {
     <div id="home" class="tab-pane fade in active">
         <main>
             <div class="container">
-              <div class="top">
-                <h1>Herzlich Willkommen</h1>
-                <p>
-                  Das perfekte Telefonbuch</br>
-                  Suchen sie etwas bestimmtes?</br>
-                  Die Liste ermöglicht ihnen die volle Anzahl aller Mitarbeiter.</br>
-                  Sind sie neu? Dann legen Sie ihren Kontakt bei HInzufügen an.</br>
-                  Haben sich ihre Daten geändert? Wenn sie auf ihren Kontakt klicken, ist eine Änderung ermöglicht</br>
-                  Wir wünschen ihnen eine n schönen Tag
-                </p>
-              </div>
+                <div id="login">
+     <div class="container">
+         <h3>Login</h3>
+     </div>
+     <input type="text" placeholder="name..."  id="text"/>
+     <input type="text" placeholder="land..."  />
+
+     <button id="send" onclick="storeData()">senden</button>
+   </div>
             </div>
         </main>
         <footer>
