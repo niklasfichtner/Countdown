@@ -1,3 +1,10 @@
+//navi
+$(document).ready(function(){
+    $('.bar').click(function(){
+        $('ul').toggleClass('active')
+    })
+})
+//firebase-add 
 const firestore = firebase.firestore();
   const settings = {/* your settings... */ timestampsInSnapshots: true};
   firestore.settings(settings);
