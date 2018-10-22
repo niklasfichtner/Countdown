@@ -15,7 +15,8 @@
 
 <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
-<script>var config = {
+<script>
+var config = {
   apiKey: "AIzaSyDjKamKLvqE9IAawcoxjDlRsoGI48FzBsQ",
   authDomain: "firmbook-f14da.firebaseapp.com",
   databaseURL: "https://firmbook-f14da.firebaseio.com",
@@ -24,6 +25,7 @@
   messagingSenderId: "1059934067199"
 };
 firebase.initializeApp(config);
+
 </script>
   <script src="index.js"></script>
 
@@ -45,15 +47,7 @@ firebase.initializeApp(config);
     <div id="home" class="tab-pane fade in active">
         <main>
             <div class="container">
-                <div id="login">
-     <div class="container">
-         <h3>Login</h3>
-     </div>
-     <input type="text" placeholder="name..."  id="text"/>
-     <input type="text" placeholder="land..."  />
-
-     <button id="send" onclick="storeData()">senden</button>
-   </div>
+        willkommen
             </div>
         </main>
         <footer>
@@ -142,20 +136,17 @@ firebase.initializeApp(config);
               </div>
             </div>
             <div class="container">
-                <form >
+                <form form method="post" enctype="multipart/form-data" >
                     <img src="img/plus.png"/>
-                    <p>
-                      <input type="file" placeholder="Name" id="employeeName" name="employeeName" />
-                        <input type="text" placeholder="Name" id="employeeName" name="employeeName" />
-                        <input type="text" placeholder="Stellenbezeichnung" id="employeestatus" name="employeestatus" />
-                        <input type="text" placeholder="Telefon" id="employeePhone" name="employeePhone" />
-                        <input type="text" placeholder="E-Mail" id="employeeMail" name="employeeMail" />
-                        <input type="text" placeholder="Standort" id="employeePlace" name="employeePlace" />
-                        <input type="submit" value="Hinzufügen"/>
-                    </p>
+                      <input type="file" id="employeePic" name="employeePic" />
+                        <input type="text" placeholder="Name" id="employeeName"  />
+                        <input type="tel" placeholder="Telefon" id="employeePhone"  />
+                        <input type="email" placeholder="E-Mail" id="employeeMail"  />
+                        <input type="text" placeholder="Stellenbezeichnung" id="employeeTitel"  />
+                        <input type="text" placeholder="Standort" id="employeeLocation"/>
                 </form>
+                <button id="send" onclick="storeData()">Hinzufügen</button>
             </div>
-
         </main>
         <footer>
             <div class="footer">
