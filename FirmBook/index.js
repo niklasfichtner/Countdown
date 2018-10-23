@@ -27,5 +27,14 @@ db.collection("employee").doc(document.getElementById("employeeName").value).set
 .catch(function(error) {
     console.error("Error writing document: ", error);
 });
-
 }
+
+const auflistung = document.querySelector("#auflistung");
+
+db.collection("employee").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+
+      auflistung.innerHTML += "<div class='box'><h3>" + doc.data().employeeName +"</h3></div>"
+
+    });
+});
