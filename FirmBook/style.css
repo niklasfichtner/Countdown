@@ -76,3 +76,7 @@ form input {text-align: center; display: block; margin-left: auto; margin-right:
 /* Footer*/
 .footer img { max-width: 80px;display: block; margin-left: auto; margin-right: auto }
 .footer {background:#EAEAEC; margin-top: 100px;margin-bottom: 0px; }
+
+input [required] {
+  border-color: red;
+}

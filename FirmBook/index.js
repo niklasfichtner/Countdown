@@ -36,7 +36,6 @@ db.collection("employee").doc(document.getElementById("employeeName").value).set
 .catch(function(error) {
     console.error("Error writing document: ", error);
 });
-
 //show alert with timeout and reset
 document.querySelector(".alert").style.display ="block";
 setTimeout(function () {
@@ -44,3 +43,13 @@ setTimeout(function () {
 },3000);
 document.getElementById("employee").reset();
 }
+
+const auflistung = document.querySelector("#auflistung");
+
+db.collection("employee").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+
+      auflistung.innerHTML += "<div class='box'><h3>" + doc.data().employeeName +"</h3></div>"
+
+    });
+});
