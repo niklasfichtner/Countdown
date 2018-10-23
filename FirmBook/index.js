@@ -26,9 +26,8 @@ function storeData(){
 db.collection("employee").doc(document.querySelector("#employeeName").value).set({
     name: document.querySelector("#employeeName").value,
     Phone: document.querySelector("#employeePhone").value,
-    mail: document.querySelector("#employeeMail").value,
+    mail: document.querySelector("#employeeMail").value
 })
-
 .then(function() {
     console.log("Erfolgreich hinzugefügt!");
 })
@@ -43,7 +42,3 @@ setTimeout(function () {
 },3000);
 document.getElementById("employee").reset();
 }
-$('#employee').submit(function () {
- storeData();
- return false;
-});

@@ -35,11 +35,9 @@
     <div id="home" class="tab-pane fade in active">
         <main>
             <div class="container">
-        <form>
-            <input type="text" placeholder="name..." required/>
-            <input type="tel" placeholder="tel..." required/>
-            <input type="submit" placeholder="hinzufügen" />
-        </form>
+        <p>
+            öokjihlugkafsdhlönfdyanfchanrhfschafjäafejaeföaflfhakhd.dkfahdfdjiosdfkjfdfnsdsfnjsdfnjk
+        </p>
             </div>
         </main>
     </div>
@@ -68,13 +66,13 @@
                 <img src="img/plus.png"/>
                 <form id="employee" method="post" enctype="multipart/form-data" >
                     <center>
-                        <div class="alert_pos">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
+                        <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
                     </center>
                         <input type="text"  placeholder="Name *" id="employeeName" required/>
-                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern="[1-9]{10}"title="Format:0123456789"/>
+                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required title="Format:0123456789"/>
                         <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
                         <center> * erforderliches Feld </center></br>
-                        <input type="submit" placeholder="hinzufügen" id="send"/>
+                        <input type="submit" onclick="storeData();return false" id="send"/>
                 </form>
 
             </div>
