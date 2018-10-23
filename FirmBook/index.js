@@ -42,3 +42,10 @@ setTimeout(function () {
 },3000);
 document.getElementById("employee").reset();
 }
+const list_div = document.querySelector("#list_div");
+
+db.collection("employee").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        list_div.innerHTML += ""
+    });
+});
