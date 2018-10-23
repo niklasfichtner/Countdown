@@ -14,7 +14,7 @@ var config = {
   messagingSenderId: "1059934067199"
 };
 firebase.initializeApp(config);
-//firebase-add
+
 const firestore = firebase.firestore();
   const settings = { timestampsInSnapshots: true};
   firestore.settings(settings);
@@ -22,7 +22,7 @@ const firestore = firebase.firestore();
 // Initialize Firebase
 var db = firebase.firestore();
 function storeData(){
-// Add a new document in collection "cities"
+// Add
 db.collection("employee").doc(document.getElementById("employeeName").value).set({
     name: document.getElementById("employeeName").value,
     Stellenbezeichnung: document.getElementById("employeeTitel").value,
@@ -31,7 +31,7 @@ db.collection("employee").doc(document.getElementById("employeeName").value).set
     Standort: document.getElementById("employeeLocation").value
 })
 .then(function() {
-    console.log("Document successfully written!");
+    console.log("Erfolgreich hinzugefügt!");
 })
 .catch(function(error) {
     console.error("Error writing document: ", error);
