@@ -21,9 +21,8 @@ const firestore = firebase.firestore();
 
 // Initialize Firebase
 var db = firebase.firestore();
+//Add
 function storeData(){
-// Add
-if(document.querySelector().value!=null){
 db.collection("employee").doc(document.querySelector("#employeeName").value).set({
     name: document.querySelector("#employeeName").value,
     Phone: document.querySelector("#employeePhone").value,
@@ -36,10 +35,15 @@ db.collection("employee").doc(document.querySelector("#employeeName").value).set
 .catch(function(error) {
     console.error("Error writing document: ", error);
 });
+
 //show alert with timeout and reset
 document.querySelector(".alert").style.display ="block";
 setTimeout(function () {
     document.querySelector(".alert").style.display ="none";
 },3000);
 document.getElementById("employee").reset();
-}}
+}
+$('#employee').submit(function () {
+ storeData();
+ return false;
+});

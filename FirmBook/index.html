@@ -63,19 +63,18 @@
             <div class="container">
               <div class="top">
                 <h1>Mitarbeiter hinzufügen</h1>
-              </div>
             </div>
-            <div class="container">
+            <div class="formular">
                 <img src="img/plus.png"/>
                 <form id="employee" method="post" enctype="multipart/form-data" >
                     <center>
-                        <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
+                        <div class="alert_pos">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
                     </center>
                         <input type="text"  placeholder="Name *" id="employeeName" required/>
-                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required/>
+                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern="[1-9]{10}"title="Format:0123456789"/>
                         <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
                         <center> * erforderliches Feld </center></br>
-                        <button id="send" onclick="storeData();return false" >Hinzufügen</input>
+                        <input type="submit" placeholder="hinzufügen" id="send"/>
                 </form>
 
             </div>

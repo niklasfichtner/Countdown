@@ -66,7 +66,7 @@ ul li {display:block; text-align: center;}
 }
 
 /* Formular-Hinzufügen */
-form img {
+.formular img {
     text-align: center;
     display: block;
     margin-left: auto;
@@ -91,7 +91,8 @@ form input {
      margin-right: auto;
      margin-bottom: 20px;
  }
-.alert {
+ /* alert-form */
+.alert_pos {
 
     background:#79c879;
     color: #fff;
