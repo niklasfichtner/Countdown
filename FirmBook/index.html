@@ -35,31 +35,28 @@
     <div id="home" class="tab-pane fade in active">
         <main>
             <div class="container">
-        willkommen
+        <form>
+            <input type="text" placeholder="name..." required/>
+            <input type="tel" placeholder="tel..." required/>
+            <input type="submit" placeholder="hinzufügen" />
+        </form>
             </div>
         </main>
-        <footer>
-            <div class="footer">
-                <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-            </div>
-        </footer>
     </div>
     <div class="tab-pane fade" id="menu1">
         <div class="container">
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="auflistung">
-                Mitarbeiterliste:</br>
+            <div class="top">
+              <h1>Mitarbeiterliste:</h1>
+            </div>
+                <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="auflistung">
                 <div class="box">
                   <h3>Username</h3>
                   <p> Email: email@test.de</p>
               </div>
             </div>
         </div>
-        <footer>
-            <div class="footer">
-                <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-            </div>
-        </footer>
+        </div>
     </div>
     <div id="menu2" class="tab-pane fade">
         <main>
@@ -69,29 +66,27 @@
               </div>
             </div>
             <div class="container">
-
+                <img src="img/plus.png"/>
                 <form id="employee" method="post" enctype="multipart/form-data" >
-                    <img src="img/plus.png"/>
-                    <diy class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</diy>
-                        <input type="text" placeholder="Name *" id="employeeName" required>
-                        <input type="tel" placeholder="Telefon *" id="employeePhone" required pattern="[0-9]{6,20}" title="Die Telefonnummer darf nur Zahlen enthalten. Beispiel: 0123456789">
-                        <input type="email" placeholder="E-Mail *" id="employeeMail" required title="Das Passwort lautet z.B.: max.mustermann@gmx.de">
-                        <input type="text" placeholder="Stellenbezeichnung" id="employeeTitel">
-                        <input type="text" placeholder="Standort" id="employeeLocation">
+                    <center>
+                        <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
+                    </center>
+                        <input type="text"  placeholder="Name *" id="employeeName" required/>
+                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required/>
+                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
                         <center> * erforderliches Feld </center></br>
-
+                        <button id="send" onclick="storeData();return false" >Hinzufügen</input>
                 </form>
-<button id="send" onclick="storeData()">Hinzufügen</button>
+
             </div>
         </main>
-        <footer>
-            <div class="footer">
-                <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-            </div>
-        </footer>
     </div>
   </div>
 </div>
-
+<footer>
+    <div class="footer">
+        <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
+    </div>
+</footer>
 </body>
 </html>

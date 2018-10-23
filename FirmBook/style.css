@@ -8,16 +8,6 @@ html, body {
     font-size: 2em;
     border-bottom: 1px solid grey;
 }
-/* Login */
-#login input {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-    margin-bottom: 20px;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-}
 
 /* Navigation*/
 nav {
@@ -65,8 +55,7 @@ li.suche:hover {
     border-right: 0px solid;
     border-left: 0px solid;
 }
-@media (min-width:768px) {
-    main {min-height: 500px;}
+
 }
 @media (max-width:768px)  {
 .toggle {display: block; cursor: auto;}
@@ -102,12 +91,11 @@ form input {
      margin-right: auto;
      margin-bottom: 20px;
  }
-.alert {display: flex;
-    align-items: center;
-    justify-content: center;
-     background:#79c879;
-     color: #fff;
-     display: none;
+.alert {
+
+    background:#79c879;
+    color: #fff;
+    display: none;
  }
 /* Mitarbeiter-Boxen*/
 .box {
@@ -146,10 +134,12 @@ form input {
 }
 .footer {
     background:#EAEAEC;
-     margin-top: 100px;
-     margin-bottom: 0px;
+    margin-top: 100px;
+    margin-bottom: 0px;
 }
-
-input [required] {
-  border-color: red;
+body {
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
 }

@@ -16,20 +16,20 @@ var config = {
 firebase.initializeApp(config);
 
 const firestore = firebase.firestore();
-  const settings = { timestampsInSnapshots: true};
+  const settings = {timestampsInSnapshots: true};
   firestore.settings(settings);
 
 // Initialize Firebase
 var db = firebase.firestore();
 function storeData(){
 // Add
-db.collection("employee").doc(document.getElementById("employeeName").value).set({
-    name: document.getElementById("employeeName").value,
-    Stellenbezeichnung: document.getElementById("employeeTitel").value,
-    Phone: document.getElementById("employeePhone").value,
-    mail: document.getElementById("employeeMail").value,
-    Standort: document.getElementById("employeeLocation").value
+if(document.querySelector().value!=null){
+db.collection("employee").doc(document.querySelector("#employeeName").value).set({
+    name: document.querySelector("#employeeName").value,
+    Phone: document.querySelector("#employeePhone").value,
+    mail: document.querySelector("#employeeMail").value,
 })
+
 .then(function() {
     console.log("Erfolgreich hinzugefügt!");
 })
@@ -42,14 +42,4 @@ setTimeout(function () {
     document.querySelector(".alert").style.display ="none";
 },3000);
 document.getElementById("employee").reset();
-}
-
-const auflistung = document.querySelector("#auflistung");
-
-db.collection("employee").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-
-      auflistung.innerHTML += "<div class='box'><h3>" + doc.data().employeeName +"</h3></div>"
-
-    });
-});
+}}
