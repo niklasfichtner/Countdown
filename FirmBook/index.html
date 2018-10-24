@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <title>FirmBook</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>FirmBook</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/ico" href="img/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="style.css" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
 
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
-  <script src="index.js"></script>
-  <script src="validation.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+    <script src="index.js"></script>
 
-</head>
-<body>
+  </head>
+  <body>
     <nav>
         <div class="toggle">
             <i class="fas fa-bars bar" aria-hidden="true"></i>
         </div>
-<div class="container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <li><a data-toggle="tab" href="#menu1">Liste</a></li>
-    <li><a data-toggle="tab" href="#menu2">Hinzufügen</a></li>
-  </ul>
-</nav>
-
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
+        <div class="container">
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#menu1">Liste</a></li>
+            <li><a data-toggle="tab" href="#menu2">Hinzufügen</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
         <main>
-            <div class="container">
-              <h1>Herzlich Willkommen</h1>
+          <div class="container">
+            <h1>Herzlich Willkommen</h1>
               <p>
                 Das perfekte Telefonbuch</br>
                 Suchen sie jemanden bestimmten?</br>
@@ -45,53 +44,51 @@
                 Haben sich ihre Daten geändert? Wenn sie auf ihren Kontakt klicken, ist eine Änderung ermöglicht</br></br>
                 Wir wünschen ihnen einen schönen Tag!
               </p>
-            </div>
+          </div>
         </main>
-    </div>
-    <div class="tab-pane fade" id="menu1">
+      </div>
+      <div class="tab-pane fade" id="menu1">
         <div class="container">
-            <div class="top">
-              <h1>Mitarbeiterliste:</h1>
-            </div>
-                <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="list_div">
-                <div class="box">
-                  <h3>Username</h3>
-                  <p> Email: email@test.de</p>
+          <div class="top">
+            <h1>Mitarbeiterliste:</h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="list_div">
+              <div class="box">
+                <h3>Username</h3>
+                <p> Email: email@test.de</p>
               </div>
             </div>
+          </div>
         </div>
-        </div>
-    </div>
-    <div id="menu2" class="tab-pane fade">
+      </div>
+      <div id="menu2" class="tab-pane fade">
         <main>
-            <div class="container">
-              <div class="top">
-                <h1>Mitarbeiter hinzufügen</h1>
+          <div class="container">
+            <div class="top">
+              <h1>Mitarbeiter hinzufügen</h1>
             </div>
             <div class="formular">
-                <img src="img/plus.png"/>
-                <form id="employee" method="post" enctype="multipart/form-data">
-                    <center>
-                        <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt!</div>
-                    </center>
-                    <div class="useradd">
-                        <input type="text"  placeholder="Name *" id="employeeName" required/>
-                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern="[1-9]{6,}" />
-                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required />
-                        <center> * erforderliches Feld </center></br>
-                        <input type="submit"  id="send" onclick="storeData()" value="Hinzufügen"/>
-                    </div>
-                </form>
+              <img src="img/plus.png"/>
+              <form id="employee" method="post" enctype="multipart/form-data" >
+                <center>
+                  <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
+                </center>
+                  <input type="text"  placeholder="Name *" id="employeeName" required/>
+                  <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern title="Format:0123456789"/>
+                  <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
+                  <center> * erforderliches Feld </center></br>
+                  <input type="submit" onclick="storeData();return false" id="send" value="Hinzufügen"/>
+              </form>
             </div>
+          </div>
         </main>
+      </div>
     </div>
-  </div>
-</div>
-<footer>
-    <div class="footer">
+    <footer>
+      <div class="footer">
         <a href="#top"><img src="img/ontop.png" alt="Zurück nach oben" /></a>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
