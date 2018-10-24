@@ -53,7 +53,7 @@
               <h1>Mitarbeiterliste:</h1>
             </div>
                 <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="auflistung">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="list_div">
                 <div class="box">
                   <h3>Username</h3>
                   <p> Email: email@test.de</p>
@@ -67,19 +67,18 @@
             <div class="container">
               <div class="top">
                 <h1>Mitarbeiter hinzufügen</h1>
-              </div>
             </div>
-            <div class="container">
+            <div class="formular">
                 <img src="img/plus.png"/>
                 <form id="employee" method="post" enctype="multipart/form-data" >
                     <center>
                         <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
                     </center>
                         <input type="text"  placeholder="Name *" id="employeeName" required/>
-                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern="[0-9]{6,20}" title="Die Telefonnummer darf nur Zahlen enthalten. Beispiel: 0123456789"/>
-                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required title="Das Passwort lautet z.B.: max.mustermann@gmx.de"/>
+                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required title="Format:0123456789"/>
+                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
                         <center> * erforderliches Feld </center></br>
-                        <input type="submit" value="Hinzufügen" id="send" onclick="storeData()"></input>
+                        <input type="submit" onclick="storeData();return false" id="send" value="Hinzufügen"/>
                 </form>
             </div>
         </main>

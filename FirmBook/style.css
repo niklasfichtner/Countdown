@@ -66,7 +66,7 @@ ul li {display:block; text-align: center;}
 }
 
 /* Formular-Hinzufügen */
-form img {
+.formular img {
     text-align: center;
     display: block;
     margin-left: auto;
@@ -91,12 +91,21 @@ form input {
      margin-right: auto;
      margin-bottom: 20px;
  }
+<<<<<<< HEAD
 .alert {display: flex;
     align-items: center;
     justify-content: center;
      background:#79c879;
      color: #fff;
      display: none;
+=======
+ /* alert-form */
+.alert {
+
+    background:#79c879;
+    color: #fff;
+    display: none;
+>>>>>>> 56e6113b435a7f659e71737fdcaf832837aced39
  }
 /* Mitarbeiter-Boxen*/
 .box {
