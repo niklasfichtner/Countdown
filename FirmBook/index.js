@@ -21,10 +21,10 @@ firestore.settings(settings);
 
 // Initialize Firebase
 var db = firebase.firestore();
-//Add
 
+//storeData()
 function storeData(){
-
+//validation
   var name= document.querySelector("#employeeName");
   if (name.value == "" || !isNaN(name.value)) {
     document.getElementById("name-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
@@ -49,10 +49,10 @@ function storeData(){
   else{
     document.getElementById("email-error").innerHTML = "";
   }
-
-  db.collection("employee").doc(document.querySelector("#employeeName").value).set({
+//Add
+  db.collection("employee").doc().set({
       name: document.querySelector("#employeeName").value,
-      Phone: document.querySelector("#employeePhone").value,
+      phone: document.querySelector("#employeePhone").value,
       mail: document.querySelector("#employeeMail").value
   })
   .then(function() {
@@ -69,3 +69,12 @@ function storeData(){
   },3000);
   document.getElementById("employee").reset();
 }
+
+//read
+    db.collection("employee").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            const list_div = document.getElementById("list");
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box'><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><p class='email'>"+doc.data().mail+"</p><p class='tel'>"+doc.data().phone+"</p></div></div>" ;
+            list_div.innerHTML += info
+        });
+    });
