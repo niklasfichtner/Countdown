@@ -22,6 +22,7 @@ const firestore = firebase.firestore();
 // Initialize Firebase
 var db = firebase.firestore();
 //Add
+
 function storeData(){
 db.collection("employee").doc(document.querySelector("#employeeName").value).set({
     name: document.querySelector("#employeeName").value,
@@ -42,10 +43,3 @@ setTimeout(function () {
 },3000);
 document.getElementById("employee").reset();
 }
-const list_div = document.querySelector("#list_div");
-
-db.collection("employee").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        list_div.innerHTML += ""
-    });
-});

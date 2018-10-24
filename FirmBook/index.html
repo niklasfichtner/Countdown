@@ -16,6 +16,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
   <script src="index.js"></script>
+  <script src="validation.js"></script>
 
 </head>
 <body>
@@ -64,15 +65,17 @@
             </div>
             <div class="formular">
                 <img src="img/plus.png"/>
-                <form id="employee" method="post" enctype="multipart/form-data" >
+                <form id="employee" method="post" enctype="multipart/form-data">
                     <center>
-                        <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
+                        <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt!</div>
                     </center>
+                    <div class="useradd">
                         <input type="text"  placeholder="Name *" id="employeeName" required/>
-                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required title="Format:0123456789"/>
-                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
+                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern="[1-9]{6,}" />
+                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required />
                         <center> * erforderliches Feld </center></br>
-                        <input type="submit" onclick="storeData();return false" id="send" value="Hinzufügen"/>
+                        <input type="submit"  id="send" onclick="storeData()" value="Hinzufügen"/>
+                    </div>
                 </form>
 
             </div>
