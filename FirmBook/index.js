@@ -24,6 +24,32 @@ var db = firebase.firestore();
 //Add
 
 function storeData(){
+
+  var name= document.querySelector("#employeeName");
+  if (name.value == "" || !isNaN(name.value)) {
+    document.getElementById("name-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
+    return false;
+  }
+  else{
+    document.getElementById("name-error").innerHTML = "";
+  }
+  var tel= document.querySelector("#employeePhone");
+  if (tel.value == "" || isNaN(tel.value)){
+    document.getElementById("tel-error").innerHTML = "Bitte geben Sie hier Ihre Telefonnumer ein. Es sind nur Zahlen erlaubt! Beispiel:0123456789";
+    return false;
+  }
+  else{
+    document.getElementById("tel-error").innerHTML = "";
+  }
+  var email= document.querySelector("#employeeMail");
+  if (email.value == "" || email.value.indexOf("@") <= 0){
+    document.getElementById("email-error").innerHTML = "Bitte geben Sie hier Ihre Emailadresse ein. Denken Sie an das @-Zeichen! Beispiel: maxmustermann@gmx.de";
+    return false;
+  }
+  else{
+    document.getElementById("email-error").innerHTML = "";
+  }
+
   db.collection("employee").doc(document.querySelector("#employeeName").value).set({
       name: document.querySelector("#employeeName").value,
       Phone: document.querySelector("#employeePhone").value,

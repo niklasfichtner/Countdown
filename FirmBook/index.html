@@ -74,11 +74,14 @@
                 <center>
                   <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
                 </center>
-                  <input type="text"  placeholder="Name *" id="employeeName" required/>
-                  <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern title="Format:0123456789"/>
-                  <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
+                  <input type="text"  placeholder="Name *" id="employeeName"/>
+                  <span id="name-error"></span>
+                  <input type="tel"  placeholder="Telefon *" id="employeePhone"/>
+                  <span id="tel-error"></span>
+                  <input type="email"  placeholder="E-Mail *" id="employeeMail"/>
+                  <span id="email-error"></span>
                   <center> * erforderliches Feld </center></br>
-                  <input type="submit" onclick="storeData();return false" id="send" value="Hinzufügen"/>
+                  <button onclick="storeData();return false" id="send">Hinzufügen</button>
               </form>
             </div>
           </div>
