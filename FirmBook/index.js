@@ -23,23 +23,22 @@ const firestore = firebase.firestore();
 var db = firebase.firestore();
 function storeData(){
 // Add
-if(document.querySelector().value!=null){
-db.collection("employee").doc(document.querySelector("#employeeName").value).set({
-    name: document.querySelector("#employeeName").value,
-    Phone: document.querySelector("#employeePhone").value,
-    mail: document.querySelector("#employeeMail").value,
-})
-
-.then(function() {
-    console.log("Erfolgreich hinzugefügt!");
-})
-.catch(function(error) {
-    console.error("Error writing document: ", error);
-});
+  db.collection("employee").doc(document.querySelector("#employeeName").value).set({
+      name: document.querySelector("#employeeName").value,
+      Phone: document.querySelector("#employeePhone").value,
+      mail: document.querySelector("#employeeMail").value,
+  })
+    .then(function() {
+      console.log("Erfolgreich hinzugefügt!");
+      return false;
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });
 //show alert with timeout and reset
-document.querySelector(".alert").style.display ="block";
-setTimeout(function () {
-    document.querySelector(".alert").style.display ="none";
-},3000);
-document.getElementById("employee").reset();
-}}
+    document.querySelector(".alert").style.display ="block";
+    setTimeout(function () {
+      document.querySelector(".alert").style.display ="none";
+    },3000);
+  //  document.getElementById("employee").reset();
+}

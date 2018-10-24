@@ -35,11 +35,15 @@
     <div id="home" class="tab-pane fade in active">
         <main>
             <div class="container">
-        <form>
-            <input type="text" placeholder="name..." required/>
-            <input type="tel" placeholder="tel..." required/>
-            <input type="submit" placeholder="hinzufügen" />
-        </form>
+              <h1>Herzlich Willkommen</h1>
+              <p>
+                Das perfekte Telefonbuch</br>
+                Suchen sie jemanden bestimmten?</br>
+                Die Liste ermöglicht ihnen die volle Anzahl aller Mitarbeiter.</br>
+                Sind sie neu? Dann legen Sie ihren Kontakt bei Hinzufügen an.</br>
+                Haben sich ihre Daten geändert? Wenn sie auf ihren Kontakt klicken, ist eine Änderung ermöglicht</br></br>
+                Wir wünschen ihnen einen schönen Tag!
+              </p>
             </div>
         </main>
     </div>
@@ -72,12 +76,11 @@
                         <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
                     </center>
                         <input type="text"  placeholder="Name *" id="employeeName" required/>
-                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required/>
-                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required/>
+                        <input type="tel"  placeholder="Telefon *" id="employeePhone" required pattern="[0-9]{6,20}" title="Die Telefonnummer darf nur Zahlen enthalten. Beispiel: 0123456789"/>
+                        <input type="email"  placeholder="E-Mail *" id="employeeMail" required title="Das Passwort lautet z.B.: max.mustermann@gmx.de"/>
                         <center> * erforderliches Feld </center></br>
-                        <button id="send" onclick="storeData();return false" >Hinzufügen</input>
+                        <input type="submit" value="Hinzufügen" id="send" onclick="storeData()"></input>
                 </form>
-
             </div>
         </main>
     </div>
