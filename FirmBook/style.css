@@ -93,7 +93,7 @@ form input {
 form span {
   color: red;
 }
-.container button {
+.form button {
   text-align: center;
   display: block;
   margin-left: auto;
@@ -110,6 +110,9 @@ form span {
   display: none;
  }
 /* Mitarbeiter-Boxen*/
+button #refr{
+    display: inline;
+}
 .box {
   display: inline-block;
   text-align: center;

@@ -61,7 +61,6 @@ function storeData(){
   .catch(function(error) {
       console.error("Error writing document: ", error);
   });
-
 //show alert with timeout and reset
   document.querySelector(".alert").style.display ="block";
   setTimeout(function () {
@@ -69,7 +68,6 @@ function storeData(){
   },3000);
   document.getElementById("employee").reset();
 }
-
 //read
     db.collection("employee").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -78,3 +76,15 @@ function storeData(){
             list_div.innerHTML += info
         });
     });
+//refresh
+function refresh(){
+    window.alert("TODO")
+}
+//delete all
+function deleteAll(){
+    db.collection("employee").delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+}
