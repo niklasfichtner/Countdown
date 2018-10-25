@@ -80,11 +80,3 @@ function storeData(){
 function refresh(){
     window.alert("TODO")
 }
-//delete all
-function deleteAll(){
-    db.collection("employee").delete().then(function() {
-        console.log("Document successfully deleted!");
-    }).catch(function(error) {
-        console.error("Error removing document: ", error);
-    });
-}
