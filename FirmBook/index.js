@@ -79,6 +79,11 @@ function storeData(){
         });
     });
 
+/*sortData
+function sortData(){
+  var sortList = employeeRef.orderBy('name');
+}*/
+
 //delete
 //DocumentReference ref = db.collection("employee").document();
 //String myId = ref.getId();
