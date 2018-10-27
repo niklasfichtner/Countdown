@@ -22,6 +22,7 @@ firestore.settings(settings);
 // Initialize Firebase
 var db = firebase.firestore();
 
+
 //storeData()
 function storeData(){
 //validation
@@ -68,15 +69,22 @@ function storeData(){
   },3000);
   document.getElementById("employee").reset();
 }
+
 //read
     db.collection("employee").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box'><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><p class='email'>"+doc.data().mail+"</p><p class='tel'>"+doc.data().phone+"</p></div></div>" ;
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id='box_id'><i class='fas fa-times' id='x'></i><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><p class='email'>E-Mail: "+doc.data().mail+"</p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
             list_div.innerHTML += info
         });
     });
-//refresh
-function refresh(){
-    window.alert("TODO")
-}
+
+//delete
+//DocumentReference ref = db.collection("employee").document();
+//String myId = ref.getId();
+
+//db.collection("employee").doc(myId).delete().then(function() {
+//    console.log("Document successfully deleted!");
+//}).catch(function(error) {
+//    console.error("Error removing document: ", error);
+//});

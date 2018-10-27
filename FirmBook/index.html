@@ -53,7 +53,7 @@
         <div class="container">
           <div class="top">
             <h1>Mitarbeiterliste:</h1>
-            <button id="refr" onclick="refresh()">Aktualisieren</button>
+            <button onclick="location.reload()">Aktualisieren</button>
           </div>
           <div class="row">
             <span id="list">
@@ -65,14 +65,14 @@
         <main>
           <div class="container">
             <div class="top">
-              <h1>Mitarbeiter hinzufügen</h1>
+              <h1 id="ue">Mitarbeiter hinzufügen</h1>
             </div>
             <div class="formular">
-              <img src="img/plus.png"/>
+              <img src="img/plus.png" id="plus"/>
               <form id="employee" method="post" enctype="multipart/form-data" >
                 <center>
                   <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
-
+                  <input type="file" id="fileButton" />
                   <input type="text"  placeholder="Name *" id="employeeName"/>
                   <span id="name-error"></span>
                   <input type="tel"  placeholder="Telefon *" id="employeePhone"/>

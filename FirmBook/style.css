@@ -115,7 +115,6 @@ button #refr{
 }
 .box {
   display: inline-block;
-  text-align: center;
   margin-top: 1em;
   transition: box-shadow .3s;
   border: 1px solid darkgrey;
@@ -125,7 +124,18 @@ button #refr{
   transition: transform 0.5s, background 0.5s;
   transform: scale(1);
 }
+.box p,h3 {
+    text-align: center;
+}
+.fa-times{
+    float: right;
+    font-size: 20px;
+    background: #eaeaec;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 .box img {
+    text-align: center;
   display: block;
   width: 100%;
   margin-bottom: 0.5em;
