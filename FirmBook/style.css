@@ -54,9 +54,7 @@ li.suche:hover {
   border-right: 0px solid;
   border-left: 0px solid;
 }
-@media (min-width:768px) {
-  main {min-height: 500px;}
-}
+
 @media (max-width:768px)  {
   .toggle {display: block; cursor: auto;}
   ul {
