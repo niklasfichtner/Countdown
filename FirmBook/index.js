@@ -88,10 +88,10 @@ function storeData(){
     });
 
 //DELETE noch unfertig und keine funktion
-function delete(){
-db.collection("employee").doc(docRef.id).delete().then(function() {
-  console.log("Document successfully deleted!");
-}).catch(function(error) {
-  console.error("Error removing document: ", error);
-});
-}
+//function delete(){
+//db.collection("employee").doc(docRef.id).delete().then(function() {
+  //console.log("Document successfully deleted!");
+//}).catch(function(error) {
+  //console.error("Error removing document: ", error);
+//});
+//}
