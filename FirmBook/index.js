@@ -1,4 +1,4 @@
-//navi jquery(drücken von klasse bar->function(ul(css=display none) ändert klasseauf klassse active(css=display block) geschalten))
+//navi
 $(document).ready(function(){
     $('.bar').click(function(){
         $('ul').toggleClass('active')
@@ -14,62 +14,56 @@ var config = {
   messagingSenderId: "1059934067199"
 };
 firebase.initializeApp(config);
-
+var db = firebase.firestore();
 const firestore = firebase.firestore();
 const settings = {timestampsInSnapshots: true};
 firestore.settings(settings);
 
-// Initialize Firebase
-var db = firebase.firestore();
-
-
-//drücken von input mit onclick löst function storeData() aus
+//storeData()
 function storeData(){
-//validation wenn namensfeld leer oder ist eine nummer dann infotext
+//validation
   var name= document.querySelector("#employeeName");
   if (name.value == "" || !isNaN(name.value)) {
     document.getElementById("name-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
     return false;
   }
-  //wenn nicht dann kein info text in span
+
   else{
     document.getElementById("name-error").innerHTML = "";
   }
-  //validation wenn telfeld leer oder ist keine nummer dann infotext
+
   var tel= document.querySelector("#employeePhone");
   if (tel.value == "" || isNaN(tel.value)){
     document.getElementById("tel-error").innerHTML = "Bitte geben Sie hier Ihre Telefonnumer ein. Es sind nur Zahlen erlaubt! Beispiel:0123456789";
     return false;
   }
-  //sonst kein infotext
+
   else{
     document.getElementById("tel-error").innerHTML = "";
   }
-  //validation wenn emailfeld leer oder besitzt kein @ dann infotext
+
   var email= document.querySelector("#employeeMail");
   if (email.value == "" || email.value.indexOf("@") <= 0){
     document.getElementById("email-error").innerHTML = "Bitte geben Sie hier Ihre Emailadresse ein. Denken Sie an das @-Zeichen! Beispiel: maxmustermann@gmx.de";
     return false;
   }
-  //sonst kein infotext
+
   else{
     document.getElementById("email-error").innerHTML = "";
   }
-// ADD nach der validation info an db erzeuge eine collection und setzte doc mit 3 attributen(inhalt holen von inputfeld mit id...)
+// ADD
   db.collection("employee").doc().set({
       name: document.querySelector("#employeeName").value,
       phone: document.querySelector("#employeePhone").value,
       mail: document.querySelector("#employeeMail").value
   })
-  //wenn erfolgreich info durch konsole
   .then(function() {
       console.log("Erfolgreich hinzugefügt!");
   })
-  //wenn fehler dann info durch konsole
   .catch(function(error) {
       console.error("Error writing document: ", error);
   });
-//wenn erledigt ändere die klasse alert von display none auf display block und starte einen timer und setze nach 3 sek wieder auf none
+//timeout alert
   document.querySelector(".alert").style.display ="block";
   setTimeout(function () {
       document.querySelector(".alert").style.display ="none";
@@ -77,21 +71,28 @@ function storeData(){
   document.getElementById("employee").reset();
 }
 
-//READ info an db collection... get doc mit id...
+//READ
     db.collection("employee").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            //ändere den inhalt von list(html) durch innerhtml auf inhalt der jeweiligen person und hole die attribute
             const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id='box_id'><i class='fas fa-times' id='x'></i><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><p class='email'>E-Mail: "+doc.data().mail+"</p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><hr/><p class='email'>E-Mail: "+doc.data().mail+"</p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
             list_div.innerHTML += info
         });
     });
 
-//DELETE noch unfertig und keine funktion
-//function delete(){
-//db.collection("employee").doc(docRef.id).delete().then(function() {
-  //console.log("Document successfully deleted!");
-//}).catch(function(error) {
-  //console.error("Error removing document: ", error);
-//});
-//}
+//delete
+function loeschen(elem)
+{
+    let id=elem.parentNode.id;
+    db.collection("employee").doc(id).delete().then(function() {
+
+    console.log("Document successfully deleted!");
+}).catch(function(error) {
+    console.error("Error removing document: ", error);
+});
+//timeout alert
+  document.querySelector(".alert_delete").style.display ="block";
+  setTimeout(function () {
+      document.querySelector(".alert_delete").style.display ="none";
+  },3000);
+}
