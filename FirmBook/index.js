@@ -91,7 +91,7 @@ function storeData(){
     db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3></a><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></p></div></div>" ;
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+"</a></p></h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p></div></div>" ;
             list_div.innerHTML += info
         });
     });
@@ -102,7 +102,7 @@ function detail(elem){
     var mitarbeiter=db.collection("employee").doc(id);
     mitarbeiter.get().then(function(doc){
     const div = document.getElementById("detail");
-    var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><br>Stellenbezeichnung:"+doc.data().jobtitle+" <br> Raum:"+doc.data().room+"</p></div></div>";
+    var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><br>Stellenbezeichnung: "+doc.data().jobtitle+" <br> Raum:"+doc.data().room+"</p></div></div>";
             div.innerHTML = info
     })
 }
