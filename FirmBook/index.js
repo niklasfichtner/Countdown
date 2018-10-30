@@ -74,10 +74,21 @@ function storeData(){
     db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><img src='img/person1.jpg' /><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><h3>"+doc.data().name+"</h3></a><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
             list_div.innerHTML += info
         });
     });
+
+//detail
+function detail(elem){
+    let id=elem.parentNode.id;
+    var mitarbeiter=db.collection("employee").doc(id);
+    mitarbeiter.get().then(function(doc){
+    const div = document.getElementById("detail");
+    var info ="<h3>"+doc.data().name+"</h3><p>"+doc.data().phone+"<br>"+doc.data().mail+"</p>" ;
+            div.innerHTML += info
+})
+}
 //delete
 function loeschen(elem){
     let id=elem.parentNode.id;
