@@ -7,6 +7,11 @@ html, body {
 #home{
     background-image: url("telefonbuch.jpg");
 }
+#home{
+  background: url("telefonbuch.jpg");
+  background-size: contain;
+}
+
 body{
     display:flex;
     flex-direction: column;
