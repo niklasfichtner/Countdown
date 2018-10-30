@@ -66,8 +66,22 @@
           <div class="top">
             <h1>Detailseite</h1>
           </div>
-          </br><img src="img/person1.jpg" />
+          <div class="detail">
+               <img src="img/person1.jpg" />
+          </div>
             <span id="detail"></span>
+        </div>
+      </div>
+      <div id="bearbeiten" class="tab-pane fade">
+        <div class="container">
+          <div class="top">
+            <h1>Bearbeiten</h1>
+          </div>
+          <div class="detail">
+               <img src="img/person1.jpg" />
+          </div>
+          <div class="alert_update">Der Mitarbeiter wurde erfolgreich bearbeitet!</div>
+            <span id="neu"></span>
         </div>
       </div>
       <div id="hinzufuegen" class="tab-pane fade">
@@ -87,8 +101,8 @@
                   <span id="tel-error"></span>
                   <input type="email"  placeholder="E-Mail *" id="employeeMail"/>
                   <span id="email-error"></span>
-                  <!--<input type="text"  placeholder="Stellenbezeichnung" id="employeeJobTitle"/>
-                  <input type="text"  placeholder="Raum" id="employeeRoom"/>-->
+                  <input type="text"  placeholder="Stellenbezeichnung" id="employeeJobTitle"/>
+                  <input type="text"  placeholder="Raum" id="employeeRoom"/>
                   <center> * erforderliches Feld </center></br>
                   <button onclick="storeData();return false" id="send">Hinzufügen</button>
                   </center>

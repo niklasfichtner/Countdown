@@ -50,22 +50,28 @@ function storeData(){
   else{
     document.getElementById("email-error").innerHTML = "";
   }
-  /*var stellenbezeichnung= document.querySelector("#employeeJobTitle");
+  var stellenbezeichnung= document.querySelector("#employeeJobTitle");
   if (stellenbezeichnung.value == ""){
     stellenbezeichnung.value = "-";
   }
+  else{
+
+  }
   var raum= document.querySelector("#employeeRoom");
-  if (raum.value ==){
+  if (raum.value ==""){
     raum.value = "-";
-  }*/
+  }
+  else{
+
+  }
 
 // ADD
   db.collection("employee").doc().set({
       name: document.querySelector("#employeeName").value,
       phone: document.querySelector("#employeePhone").value,
-      mail: document.querySelector("#employeeMail").value/*,
-      jobTitle: document.querySelector("#employeeJobTitle").value,
-      room: document.querySelector("#employeeRoom").value*/
+      mail: document.querySelector("#employeeMail").value,
+      jobtitle: document.querySelector("#employeeJobTitle").value,
+      room: document.querySelector("#employeeRoom").value
   })
   .then(function() {
       console.log("Erfolgreich hinzugefügt!");
@@ -90,32 +96,100 @@ function storeData(){
         });
     });
 
-// detail noch nicht fertig
+// detail
 function detail(elem){
     let id=elem.parentNode.id;
     var mitarbeiter=db.collection("employee").doc(id);
     mitarbeiter.get().then(function(doc){
     const div = document.getElementById("detail");
-    var info ="<br><br><a data-toggle='tab' href='#detailseite' onclick='bearbeiten(this)'><button onclick='bearbeiten(this)'><center>Bearbeiten</center></button></a><div class='box'><h3>"+doc.data().name+"</h3><p class='tel'>Tel.: "+doc.data().phone+"</p><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p></div>";
-            div.innerHTML += info
+    var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'><center>Bearbeiten</center></button><div class='box'><h3>"+doc.data().name+"</h3><p class='tel'>Tel.: "+doc.data().phone+"</p><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><p>Stellenbezeichnung:"+doc.data().jobtitle+"</p><p>Raum:"+doc.data().room+"</p></div></div>";
+            div.innerHTML = info
     })
 }
 
-//Bearbeiten noch nicht fertig
-function bearbeiten(elem){
-  let id=elem.parentNode.id;
-  var mitarbeiter=db.collection("employee").doc(id);
-  mitarbeiter.get().then(function(doc){
-  const div = document.getElementById("detail");
-  var info ="<div class='formular'><h3>"+doc.data().name+"</h3><p class='tel'>Tel.: "+doc.data().phone+"</p><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><button onclick='änderungspeichern()'>Bearbeiten</button></div>";
-          div.innerHTML += info
-  })
+//Bearbeitenseite
+function bearbeite(elem){
+    let id=elem.parentNode.id;
+    var e=db.collection("employee").doc(id);
+    e.get().then(function(doc){
+    const bearb = document.getElementById("neu");
+    var neu ="<div class='box'><form id="+doc.id+"><input type='text' placeholder="+doc.data().name+" id='employeeName'><span id='name-error'></span><input type='tel'placeholder="+doc.data().phone+" id='employeePhone'><span id='tel-error'></span><input type='email'placeholder="+doc.data().mail+" id='employeeMail'><span id='email-error'></span><input type='text'placeholder="+doc.data().jobtitle+" id='employeeJobTitle'><input type='text'placeholder="+doc.data().room+" id='employeeRoom'><input type='submit' value='Daten ändern' onclick='update(this);return false'></form></div>";
+    bearb.innerHTML = neu
+})
+}
+
+function update(elem){
+    //validation
+    var name= document.querySelector("#employeeName");
+    if (name.value == "" || !isNaN(name.value)) {
+      document.getElementById("name-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
+      return false;
+    }
+
+    else{
+      document.getElementById("name-error").innerHTML = "";
+    }
+
+    var tel= document.querySelector("#employeePhone");
+    if (tel.value == "" || isNaN(tel.value)){
+      document.getElementById("tel-error").innerHTML = "Bitte geben Sie hier Ihre Telefonnumer ein. Es sind nur Zahlen erlaubt! Beispiel:0123456789";
+      return false;
+    }
+
+    else{
+      document.getElementById("tel-error").innerHTML = "";
+    }
+
+    var email= document.querySelector("#employeeMail");
+    if (email.value == "" || email.value.indexOf("@") <= 0){
+      document.getElementById("email-error").innerHTML = "Bitte geben Sie hier Ihre Emailadresse ein. Denken Sie an das @-Zeichen! Beispiel: maxmustermann@gmx.de";
+      return false;
+    }
+
+    else{
+      document.getElementById("email-error").innerHTML = "";
+    }
+    var stellenbezeichnung= document.querySelector("#employeeJobTitle");
+    if (stellenbezeichnung.value == ""){
+      stellenbezeichnung.value = "-";
+    }
+    else{
+
+    }
+    var raum= document.querySelector("#employeeRoom");
+    if (raum.value ==""){
+      raum.value = "-";
+    }
+    else{
+    }
+    //update funktion
+    let id=elem.parentNode.id;
+    var e=db.collection("employee").doc(id);
+     e.update({
+        name: document.querySelector("#employeeName").value,
+        phone: document.querySelector("#employeePhone").value,
+        mail: document.querySelector("#employeeMail").value,
+        jobtitle: document.querySelector("#employeeJobTitle").value,
+        room: document.querySelector("#employeeRoom").value
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+    //timeout alert
+      document.querySelector(".alert_update").style.display ="block";
+      setTimeout(function () {
+          document.querySelector(".alert_update").style.display ="none";
+      },3000);
+
 }
 //delete
 function loeschen(elem){
     let id=elem.parentNode.id;
     db.collection("employee").doc(id).delete().then(function() {
-
     console.log("Document successfully deleted!");
 }).catch(function(error) {
     console.error("Error removing document: ", error);
