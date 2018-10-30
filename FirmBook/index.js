@@ -70,7 +70,7 @@ function storeData(){
   document.getElementById("employee").reset();
 }
 
-//GET
+//GET alphabetisch
     db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const list_div = document.getElementById("list");
