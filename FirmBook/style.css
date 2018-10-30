@@ -5,9 +5,6 @@ html, body {
   font-family: 'Nunito', sans-serif;
 }
 #home{
-    background-image: url("telefonbuch.jpg");
-}
-#home{
   background: url("telefonbuch.jpg");
   background-size: contain;
 }
