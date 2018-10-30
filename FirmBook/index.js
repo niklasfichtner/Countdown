@@ -66,7 +66,7 @@ function storeData(){
   }
 
 // ADD
-  db.collection("employee").doc().set({
+  db.collection("employee").doc(document.querySelector("#employeeName").value).set({
       name: document.querySelector("#employeeName").value,
       phone: document.querySelector("#employeePhone").value,
       mail: document.querySelector("#employeeMail").value,
@@ -199,4 +199,22 @@ function loeschen(elem){
   setTimeout(function () {
       document.querySelector(".alert_delete").style.display ="none";
   },3000);
+}
+
+//Suche
+function suchen(){
+    var suche=document.querySelector("#suchen").value;
+    if(suche == undefined || suche ==null|| suche=="" || suche==!isNaN){
+        const suchen = document.getElementById("suche");
+        var info ="<h2 id='alert_search'>Der Mitarbeiter wurde nicht gefunden!</h2>";
+        suchen.innerHTML = info
+    }
+    else{
+        var docRef = db.collection("employee").doc(suche);
+        docRef.get().then(function(doc){
+                const suchen = document.getElementById("suche");
+                var info ="<div id="+doc.id+"><div class='detail'><img src='img/person1.jpg' /></div><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><br>Stellenbezeichnung:"+doc.data().jobtitle+" <br> Raum:"+doc.data().room+"</p></div></div>";
+                suchen.innerHTML = info
+            });
+    }
 }

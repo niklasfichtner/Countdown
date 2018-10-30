@@ -28,6 +28,7 @@
             <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
             <li><a data-toggle="tab" href="#liste">Liste</a></li>
             <li><a data-toggle="tab" href="#hinzufuegen">Hinzufügen</a></li>
+            <li><a data-toggle="tab" href="#search">Suchen</a></li>
           </ul>
         </div>
     </nav>
@@ -110,6 +111,17 @@
                   </center>
               </form>
             </div>
+          </div>
+        </main>
+      </div>
+      <div id="search" class="tab-pane fade">
+        <main>
+          <div class="container">
+              <div class="top">
+                <h1>Suche</h1>
+              </div>
+              <input type="text" placeholder="Name..." id="suchen" /><button onclick="suchen()">Los</button>
+              <span id="suche"></span>
           </div>
         </main>
       </div>
