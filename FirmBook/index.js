@@ -50,11 +50,22 @@ function storeData(){
   else{
     document.getElementById("email-error").innerHTML = "";
   }
+  /*var stellenbezeichnung= document.querySelector("#employeeJobTitle");
+  if (stellenbezeichnung.value == ""){
+    stellenbezeichnung.value = "-";
+  }
+  var raum= document.querySelector("#employeeRoom");
+  if (raum.value ==){
+    raum.value = "-";
+  }*/
+
 // ADD
   db.collection("employee").doc().set({
       name: document.querySelector("#employeeName").value,
       phone: document.querySelector("#employeePhone").value,
-      mail: document.querySelector("#employeeMail").value
+      mail: document.querySelector("#employeeMail").value/*,
+      jobTitle: document.querySelector("#employeeJobTitle").value,
+      room: document.querySelector("#employeeRoom").value*/
   })
   .then(function() {
       console.log("Erfolgreich hinzugefügt!");
@@ -79,15 +90,26 @@ function storeData(){
         });
     });
 
-//detail
+// detail noch nicht fertig
 function detail(elem){
     let id=elem.parentNode.id;
     var mitarbeiter=db.collection("employee").doc(id);
     mitarbeiter.get().then(function(doc){
     const div = document.getElementById("detail");
-    var info ="<h3>"+doc.data().name+"</h3><p>"+doc.data().phone+"<br>"+doc.data().mail+"</p>" ;
+    var info ="<br><br><a data-toggle='tab' href='#detailseite' onclick='bearbeiten(this)'><button onclick='bearbeiten(this)'><center>Bearbeiten</center></button></a><div class='box'><h3>"+doc.data().name+"</h3><p class='tel'>Tel.: "+doc.data().phone+"</p><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p></div>";
             div.innerHTML += info
-})
+    })
+}
+
+//Bearbeiten noch nicht fertig
+function bearbeiten(elem){
+  let id=elem.parentNode.id;
+  var mitarbeiter=db.collection("employee").doc(id);
+  mitarbeiter.get().then(function(doc){
+  const div = document.getElementById("detail");
+  var info ="<div class='formular'><h3>"+doc.data().name+"</h3><p class='tel'>Tel.: "+doc.data().phone+"</p><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><button onclick='änderungspeichern()'>Bearbeiten</button></div>";
+          div.innerHTML += info
+  })
 }
 //delete
 function loeschen(elem){
