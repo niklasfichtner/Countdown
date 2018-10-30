@@ -101,7 +101,7 @@ function detail(elem){
     })
 }
 
-//Bearbeiten noch nicht fertig
+//Bearbeiten noch nicht fertig programmiert
 function bearbeiten(elem){
   let id=elem.parentNode.id;
   var mitarbeiter=db.collection("employee").doc(id);
