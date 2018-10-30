@@ -19,7 +19,6 @@ const firestore = firebase.firestore();
 const settings = {timestampsInSnapshots: true};
 firestore.settings(settings);
 
-//storeData()
 function storeData(){
 //validation
   var name= document.querySelector("#employeeName");
@@ -80,8 +79,7 @@ function storeData(){
         });
     });
 //delete
-function loeschen(elem)
-{
+function loeschen(elem){
     let id=elem.parentNode.id;
     db.collection("employee").doc(id).delete().then(function() {
 
