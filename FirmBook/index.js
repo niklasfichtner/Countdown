@@ -71,15 +71,14 @@ function storeData(){
   document.getElementById("employee").reset();
 }
 
-//READ
-    db.collection("employee").get().then(function(querySnapshot) {
+//GET
+    db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><hr/><p class='email'>E-Mail: "+doc.data().mail+"</p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><img src='img/person1.jpg' /><h3>"+doc.data().name+"</h3><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.: "+doc.data().phone+"</p></div></div>" ;
             list_div.innerHTML += info
         });
     });
-
 //delete
 function loeschen(elem)
 {

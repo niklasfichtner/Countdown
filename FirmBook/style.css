@@ -136,7 +136,9 @@ form button {
   }
 /* Mitarbeiter-Boxen*/
 .box {
-  display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   text-align: center;
   margin-top: 1em;
   transition: box-shadow .3s;
@@ -145,7 +147,6 @@ form button {
   background: rgba(245, 245, 245);
   padding: 0.5em;
   transition: transform 0.5s, background 0.5s;
-  transform: scale(1);
 }
 .box p,h3 {
     text-align: center;
