@@ -65,7 +65,7 @@
         <div class="container">
           <div class="top">
             <h1>Detailseite</h1>
-            <button onclick="location.reload()"><</button>
+            <button onclick="location.reload()"><i class="fas fa-chevron-left"></i></button>
           </div>
           <div class="detail">
                <img src="img/person1.jpg" />
@@ -77,7 +77,7 @@
         <div class="container">
           <div class="top">
             <h1>Bearbeiten</h1>
-            <button onclick="location.reload()"><</button>
+            <button onclick="location.reload()"><i class="fas fa-chevron-left"></i></button>
           </div>
           <div class="detail">
                <img src="img/person1.jpg" />
@@ -97,8 +97,10 @@
               <form id="employee" method="post" enctype="multipart/form-data" >
                 <center>
                   <div class="alert">Der Mitarbeiter wurde erfolgreich hinzugefügt</div>
-                  <input type="text"  placeholder="Name *" id="employeeName"/>
+                  <input type="text"  placeholder="Vorname *" id="employeeName"/>
                   <span id="name-error"></span>
+                  <input type="text"  placeholder="Nachname *" id="employeeName2"/>
+                  <span id="name-error2"></span>
                   <input type="tel"  placeholder="Telefon *" id="employeePhone"/>
                   <span id="tel-error"></span>
                   <input type="email"  placeholder="E-Mail *" id="employeeMail"/>
