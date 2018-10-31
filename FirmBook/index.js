@@ -30,15 +30,6 @@ function storeData(){
   else{
     document.getElementById("name-error").innerHTML = "";
   }
-  var name2= document.querySelector("#employeeName2");
-  if (name2.value == "" || !isNaN(name2.value)) {
-    document.getElementById("name2-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
-    return false;
-  }
-
-  else{
-    document.getElementById("name-error2").innerHTML = "";
-  }
 
   var tel= document.querySelector("#employeePhone");
   if (tel.value == "" || isNaN(tel.value)){
@@ -77,7 +68,6 @@ function storeData(){
 // ADD
   db.collection("employee").doc(document.querySelector("#employeeName").value).set({
       name: document.querySelector("#employeeName").value,
-      nachname: document.querySelector("#employeeName2").value,
       phone: document.querySelector("#employeePhone").value,
       mail: document.querySelector("#employeeMail").value,
       jobtitle: document.querySelector("#employeeJobTitle").value,
@@ -101,7 +91,7 @@ function storeData(){
     db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+" "+doc.data().nachname+"</h3></a><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></p></div></div>" ;
+            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+"</a></p></h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p></div></div>" ;
             list_div.innerHTML += info
         });
     });
@@ -112,7 +102,7 @@ function detail(elem){
     var mitarbeiter=db.collection("employee").doc(id);
     mitarbeiter.get().then(function(doc){
     const div = document.getElementById("detail");
-    var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+" "+doc.data().nachname+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><br>Stellenbezeichnung:"+doc.data().jobtitle+" <br> Raum:"+doc.data().room+"</p></div></div>";
+    var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><br>Stellenbezeichnung: "+doc.data().jobtitle+" <br> Raum:"+doc.data().room+"</p></div></div>";
             div.innerHTML = info
     })
 }
@@ -123,7 +113,7 @@ function bearbeite(elem){
     var e=db.collection("employee").doc(id);
     e.get().then(function(doc){
     const bearb = document.getElementById("neu");
-    var neu ="<div class='box'><form id="+doc.id+"><input type='text' placeholder="+doc.data().name+" id='employeeName'><span id='name-error'></span><input type='text' placeholder="+doc.data().nachname+" id='employeeName2'><span id='name2-error'></span><input type='tel'placeholder="+doc.data().phone+" id='employeePhone'><span id='tel-error'></span><input type='email'placeholder="+doc.data().mail+" id='employeeMail'><span id='email-error'></span><input type='text'placeholder="+doc.data().jobtitle+" id='employeeJobTitle'><input type='text'placeholder="+doc.data().room+" id='employeeRoom'><input type='submit' value='Daten ändern' onclick='update(this);return false'></form></div>";
+    var neu ="<div class='box'><form id="+doc.id+"><input type='text' placeholder="+doc.data().name+" id='employeeName'><span id='name-error'></span><input type='tel'placeholder="+doc.data().phone+" id='employeePhone'><span id='tel-error'></span><input type='email'placeholder="+doc.data().mail+" id='employeeMail'><span id='email-error'></span><input type='text'placeholder="+doc.data().jobtitle+" id='employeeJobTitle'><input type='text'placeholder="+doc.data().room+" id='employeeRoom'><input type='submit' value='Daten ändern' onclick='update(this);return false'></form></div>";
     bearb.innerHTML = neu
 })
 }
@@ -138,15 +128,6 @@ function update(elem){
 
     else{
       document.getElementById("name-error").innerHTML = "";
-    }
-    var name2= document.querySelector("#employeeName2");
-    if (name2.value == "" || !isNaN(name2.value)) {
-      document.getElementById("name2-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
-      return false;
-    }
-
-    else{
-      document.getElementById("name-error2").innerHTML = "";
     }
 
     var tel= document.querySelector("#employeePhone");
@@ -186,7 +167,6 @@ function update(elem){
     var e=db.collection("employee").doc(id);
     e.update({
         name: document.querySelector("#employeeName").value,
-        nachname: document.querySelector("#employeeName2").value,
         phone: document.querySelector("#employeePhone").value,
         mail: document.querySelector("#employeeMail").value,
         jobtitle: document.querySelector("#employeeJobTitle").value,
@@ -205,7 +185,6 @@ function update(elem){
           document.querySelector(".alert_update").style.display ="none";
       },3000);
 
-
 }
 //delete
 function loeschen(elem){
@@ -220,23 +199,4 @@ function loeschen(elem){
   setTimeout(function () {
       document.querySelector(".alert_delete").style.display ="none";
   },3000);
-}
-
-//Suche
-function suchen(){
-    var suche=document.querySelector("#suchen").value;
-    if(suche == undefined || suche ==null|| suche=="" || suche==!isNaN){
-        const suchen = document.getElementById("suche");
-        var info ="<h2 id='alert_search'>Der Mitarbeiter wurde nicht gefunden!</h2>";
-        suchen.innerHTML = info
-    }
-    else{
-        var docRef = db.collection("employee").doc(suche);
-        docRef.get().then(function(doc){
-                const suchen = document.getElementById("suche");
-                var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+" "+doc.data().nachname+"</h3></a><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></p></div></div>";
-                suchen.innerHTML += info
-            });
-    }
-
 }
