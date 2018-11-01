@@ -111,7 +111,7 @@ function detail(elem){
     var mitarbeiter=db.collection("employee").doc(id);
     mitarbeiter.get().then(function(doc){
     const div = document.getElementById("detail");
-     var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+" "+doc.data().nachname+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a><br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a><br>Stellenbezeichnung:"+doc.data().jobtitle+" <br> Raum:"+doc.data().room+"</p></div></div>";
+     var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+" "+doc.data().nachname+"</h3><hr><p>Tel.:<a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></br>Stellenbezeichnung:"+doc.data().jobtitle+" </br> Raum:"+doc.data().room+"</p></div></div>";
             div.innerHTML = info
     })
 }
