@@ -23,7 +23,7 @@ function storeData(){
 //validation
   var name= document.querySelector("#employeeName");
   if (name.value == "" || !isNaN(name.value)) {
-    document.getElementById("name-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
+    document.getElementById("name-error").innerHTML = "Bitte geben Sie Ihren Vornamen ein";
     return false;
   }
 
@@ -32,7 +32,7 @@ function storeData(){
   }
   var name2= document.querySelector("#employeeName2");
  if (name2.value == "" || !isNaN(name2.value)) {
-   document.getElementById("name2-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
+   document.getElementById("name-error2").innerHTML = "Bitte geben Sie Ihren Nachnamen ein";
    return false;
  }
  else{
@@ -41,7 +41,7 @@ function storeData(){
 
   var tel= document.querySelector("#employeePhone");
   if (tel.value == "" || isNaN(tel.value)){
-    document.getElementById("tel-error").innerHTML = "Bitte geben Sie hier Ihre Telefonnumer ein. Es sind nur Zahlen erlaubt! Beispiel:0123456789";
+    document.getElementById("tel-error").innerHTML = "Bitte geben Sie Ihre Telefonnummer ein";
     return false;
   }
 
@@ -51,7 +51,7 @@ function storeData(){
 
   var email= document.querySelector("#employeeMail");
   if (email.value == "" || email.value.indexOf("@") <= 0){
-    document.getElementById("email-error").innerHTML = "Bitte geben Sie hier Ihre Emailadresse ein. Denken Sie an das @-Zeichen! Beispiel: maxmustermann@gmx.de";
+    document.getElementById("email-error").innerHTML = "Bitte geben Sie Ihre Emailadresse ein";
     return false;
   }
 
@@ -131,7 +131,7 @@ function update(elem){
     //validation
     var name= document.querySelector("#employeeName");
     if (name.value == "" || !isNaN(name.value)) {
-      document.getElementById("name-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
+      document.getElementById("name-error").innerHTML = "Bitte geben Sie Ihren Vornamen ein";
       return false;
     }
 
@@ -140,16 +140,16 @@ function update(elem){
     }
     var name2= document.querySelector("#employeeName2");
     if (name2.value == "" || !isNaN(name2.value)) {
-      document.getElementById("name2-error").innerHTML = "Bitte geben Sie hier Ihren Vor- und Nachname ein. Es sind nur Buchstaben erlaubt! Beispiel: Max Mustermann";
-      return false;
+     document.getElementById("name-error2").innerHTML = "Bitte geben Sie Ihren Nachnamen ein";
+     return false;
     }
     else{
-      document.getElementById("name-error2").innerHTML = "";
+     document.getElementById("name-error2").innerHTML = "";
     }
 
     var tel= document.querySelector("#employeePhone");
     if (tel.value == "" || isNaN(tel.value)){
-      document.getElementById("tel-error").innerHTML = "Bitte geben Sie hier Ihre Telefonnumer ein. Es sind nur Zahlen erlaubt! Beispiel:0123456789";
+      document.getElementById("tel-error").innerHTML = "Bitte geben Sie Ihre Telefonnummer ein.";
       return false;
     }
 
@@ -159,7 +159,7 @@ function update(elem){
 
     var email= document.querySelector("#employeeMail");
     if (email.value == "" || email.value.indexOf("@") <= 0){
-      document.getElementById("email-error").innerHTML = "Bitte geben Sie hier Ihre Emailadresse ein. Denken Sie an das @-Zeichen! Beispiel: maxmustermann@gmx.de";
+      document.getElementById("email-error").innerHTML = "Bitte geben Sie Ihre Emailadresse ein";
       return false;
     }
 
@@ -178,6 +178,7 @@ function update(elem){
       raum.value = "-";
     }
     else{
+
     }
     //update funktion
     let id=elem.parentNode.id;
