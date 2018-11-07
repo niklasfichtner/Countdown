@@ -23,3 +23,32 @@
 [debug] [2018-10-15T18:50:42.317Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: FirmBook
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2018-11-07T16:43:31.161Z] ----------------------------------------------------------------------
+[debug] [2018-11-07T16:43:31.161Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\niklasfichtner\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-11-07T16:43:31.161Z] CLI Version:   5.0.1
+[debug] [2018-11-07T16:43:31.161Z] Platform:      win32
+[debug] [2018-11-07T16:43:31.161Z] Node Version:  v8.12.0
+[debug] [2018-11-07T16:43:31.177Z] Time:          Wed Nov 07 2018 17:43:31 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-11-07T16:43:31.177Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-07T16:43:31.193Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-07T16:43:31.193Z] > authorizing via signed-in user
+[debug] [2018-11-07T16:43:31.193Z] [iam] checking project firmbook-f14da for permissions ["firebase.projects.get"]
+[debug] [2018-11-07T16:43:31.193Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-07T16:43:31.193Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-07T16:43:33.459Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:43:33.474Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/firmbook-f14da:testIamPermissions  
+
+[debug] [2018-11-07T16:43:36.381Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T16:43:36.381Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/firmbook-f14da  
+ 
+[debug] [2018-11-07T16:43:37.224Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\niklasfichtner\Projekt webprog'...
+[info] 
+[debug] [2018-11-07T16:43:37.224Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1059934067199/clients/_:getWebAppConfig  
+ 
+[debug] [2018-11-07T16:43:39.694Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: FirmBook
+[info] +  hosting: Local server: http://localhost:5000

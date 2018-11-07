@@ -2,8 +2,8 @@
 $(document).ready(function(){
     $('.bar').click(function(){
         $('ul').toggleClass('active')
-    })
-})
+    });
+});
 //firebase config
 var config = {
   apiKey: "AIzaSyDjKamKLvqE9IAawcoxjDlRsoGI48FzBsQ",
@@ -70,9 +70,7 @@ function storeData(){
     raum.value = "-";
   }
   else{
-
   }
-
 // ADD
   db.collection("employee").doc(document.querySelector("#employeeName").value).set({
       name: document.querySelector("#employeeName").value,
@@ -97,14 +95,13 @@ function storeData(){
 }
 
 //GET alphabetisch
-    db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            const list_div = document.getElementById("list");
-            var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+" "+doc.data().nachname+"</h3></a><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.: <a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></p></div></div>" ;
-            list_div.innerHTML += info
-        });
+db.collection("employee").orderBy("name").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        const list_div = document.getElementById("list");
+        var info ="<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'><div class='box' id="+doc.id+"><i class='fas fa-times'onclick='loeschen(this)'></i><a data-toggle='tab' href='#detailseite' onclick='detail(this)'><img src='img/person1.jpg' /><h3>"+doc.data().name+" "+doc.data().nachname+"</h3></a><hr/><p class='email'>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></p><p class='tel'>Tel.: <a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></p></div></div>" ;
+        list_div.innerHTML += info
     });
-
+});
 // detail
 function detail(elem){
     let id=elem.parentNode.id;
@@ -113,9 +110,8 @@ function detail(elem){
     const div = document.getElementById("detail");
      var info ="<div id="+doc.id+"><button data-toggle='tab' href='#bearbeiten' onclick='bearbeite(this)'>Bearbeiten</button><div class='box'><h3>"+doc.data().name+" "+doc.data().nachname+"</h3><hr><p>Tel.: <a href='tel:"+doc.data().phone+"'>"+doc.data().phone+"</a></br>E-Mail: <a href= 'mailto:'"+doc.data().mail+">"+doc.data().mail+"</a></br>Stellenbezeichnung:"+doc.data().jobtitle+" </br> Raum:"+doc.data().room+"</p></div></div>";
             div.innerHTML = info
-    })
+    });
 }
-
 //Bearbeitenseite
 function bearbeite(elem){
     let id=elem.parentNode.id;
@@ -124,9 +120,8 @@ function bearbeite(elem){
     const bearb = document.getElementById("neu");
     var neu ="<div class='box'><h3>Bitte geben Sie hier Ihre Änderungswünsche ein</h3><form id="+doc.id+"><input type='text' placeholder="+doc.data().name+"* id='employeeName'><span id='name-error'></span><input type='text' placeholder="+doc.data().nachname+"* id='employeeName2'><span id='name2-error'></span><input type='tel'placeholder="+doc.data().phone+"* id='employeePhone'><span id='tel-error'></span><input type='email'placeholder="+doc.data().mail+"* id='employeeMail'><span id='email-error'></span><input type='text'placeholder="+doc.data().jobtitle+" id='employeeJobTitle'><input type='text'placeholder="+doc.data().room+" id='employeeRoom'><center> * erforderliches Feld </center></br><input type='submit' value='Daten ändern' onclick='update(this);return false'></form></div>";
     bearb.innerHTML = neu
-})
+});
 }
-
 function update(elem){
     //validation
     var name= document.querySelector("#employeeName");
@@ -210,7 +205,8 @@ function loeschen(elem){
     let id=elem.parentNode.id;
     db.collection("employee").doc(id).delete().then(function() {
     console.log("Document successfully deleted!");
-}).catch(function(error) {
+})
+.catch(function(error) {
     console.error("Error removing document: ", error);
 });
 //timeout alert
